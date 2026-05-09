@@ -147,7 +147,7 @@
       animation: fadeIn 1.2s .2s ease both;
     }
     .portrait-frame {
-      position: relative; width: 380px; height: 460px;
+      position: relative; width: 420px; height: 520px;
     }
     .portrait-frame::before {
       content: '';
@@ -163,13 +163,13 @@
       filter: sepia(10%) contrast(1.05);
     }
     .portrait-badge {
-      position: absolute; bottom: -16px; left: -16px; z-index: 2;
-      background: var(--gold); color: var(--white);
-      padding: 1rem 1.4rem; font-size: 0.78rem;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      font-weight: 500; box-shadow: 0 8px 32px rgba(184,151,90,0.35);
+      position: absolute; bottom: -20px; left: -20px; z-index: 2;
+      background: var(--gold-bright); color: var(--ink);
+      padding: 1.2rem 1.6rem; font-size: 0.76rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 600; box-shadow: 0 12px 40px rgba(212, 165, 116, 0.3);
     }
-    .portrait-badge strong { display: block; font-size: 1.3rem; font-family: 'Cormorant Garamond', serif; letter-spacing: 0; text-transform: none; }
+    .portrait-badge strong { display: block; font-size: 1.6rem; font-family: 'Cormorant Garamond', serif; letter-spacing: 0; text-transform: none; font-weight: 700; }
 
     /* ── STATS ── */
     .stats-bar {
@@ -177,13 +177,13 @@
       display: grid; grid-template-columns: repeat(3, 1fr);
     }
     .stat-item {
-      padding: 2.5rem 2rem; text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.08);
+      padding: 3rem 2rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
     }
     .stat-item:last-child { border-right: none; }
     .stat-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3.2rem; font-weight: 300; color: var(--gold-bright);
+      font-size: 4rem; font-weight: 300; color: var(--gold-bright);
       line-height: 1;
     }
     .stat-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(249,247,243,0.7); margin-top: .5rem; }
@@ -204,20 +204,23 @@
     /* ── SERVICES ── */
     .services { background: var(--muted-bg); }
     .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem; margin-top: 3.5rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem; margin-top: 3.5rem;
     }
     .service-card {
-      background: var(--white); padding: 2.4rem 2rem;
+      background: var(--white); padding: 2rem 1.8rem;
       border: 1px solid var(--border);
       transition: all .25s ease;
       position: relative; overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
     .service-card::after {
       content: attr(data-number);
-      position: absolute; top: 1.2rem; right: 1.5rem;
+      position: absolute; top: 0.8rem; right: 1rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem; font-weight: 300; color: rgba(168, 147, 80, 0.1);
+      font-size: 4.5rem; font-weight: 300; color: var(--gold-bright);
+      opacity: 0.15;
       line-height: 1;
     }
     .service-card:hover {
@@ -225,7 +228,7 @@
       transform: translateY(-6px);
       box-shadow: 0 16px 40px rgba(168, 147, 80, 0.12);
     }
-    .service-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
     .service-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem; font-weight: 600; color: var(--ink);
@@ -238,7 +241,7 @@
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 5rem; align-items: center;
     }
-    .spec-list { margin-top: 2rem; }
+    .spec-list { margin-top: 2.5rem; }
     .spec-item {
       display: flex; align-items: flex-start; gap: 1rem;
       padding: 1.2rem 0; border-bottom: 1px solid var(--border);
@@ -247,7 +250,7 @@
       width: 8px; height: 8px; border-radius: 50%;
       background: var(--gold); flex-shrink: 0; margin-top: .4rem;
     }
-    .spec-name { font-size: 1rem; font-weight: 500; color: var(--ink); }
+    .spec-name { font-size: 1rem; font-weight: 600; color: var(--ink); }
     .spec-note { font-size: 0.82rem; color: var(--text-muted); margin-top: .2rem; }
 
     .spec-aside {
@@ -262,8 +265,8 @@
     }
     .spec-quote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 300; font-style: italic;
-      color: var(--cream); line-height: 1.5;
+      font-size: 1.9rem; font-weight: 300; font-style: italic;
+      color: var(--cream); line-height: 1.6;
       position: relative; z-index: 1;
     }
     .spec-cite {
@@ -278,18 +281,26 @@
       display: grid; grid-template-columns: 1fr 1.4fr;
       gap: 6rem; align-items: start;
     }
-    .about-sticky { position: sticky; top: 8rem; }
+    .about-sticky {
+      position: sticky;
+      top: 8rem;
+    }
+    .about-sticky .section-title {
+      font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+    }
     .cert-badge {
-      margin-top: 2.5rem;
-      border: 1.5px solid var(--gold-bright);
-      padding: 1.5rem;
+      margin-top: 3rem;
+      border: 2px solid var(--gold-bright);
+      padding: 2rem;
+      background: rgba(212, 165, 116, 0.05);
     }
     .cert-badge h4 {
-      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold-bright); margin-bottom: .6rem;
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold-bright); margin-bottom: .8rem;
+      font-weight: 700;
     }
     .cert-badge p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
-    .about-text p { font-size: 1rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.4rem; }
+    .about-text p { font-size: 1rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.6rem; }
     .about-text p strong { color: var(--ink); font-weight: 500; }
 
     /* ── PROCESS ── */
@@ -297,19 +308,27 @@
     .process-steps {
       display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 0; margin-top: 3.5rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute; top: 4.5rem; left: 5%; right: 5%; height: 2px;
+      background: linear-gradient(90deg, var(--gold-bright) 0%, var(--gold-bright) 20%, transparent 20%, transparent 80%, var(--gold-bright) 80%, var(--gold-bright) 100%);
+      z-index: 0;
     }
     .step {
       padding: 2.5rem 2rem; position: relative;
       border-right: 1px solid var(--border);
+      z-index: 1;
     }
     .step:last-child { border-right: none; }
     .step-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem; font-weight: 300; color: var(--gold-bright);
-      opacity: 0.3;
+      font-size: 3.5rem; font-weight: 400; color: var(--gold-bright);
       line-height: 1; margin-bottom: 1rem;
+      opacity: 0.4;
     }
-    .step-title { font-weight: 500; font-size: 1rem; color: var(--ink); margin-bottom: .5rem; }
+    .step-title { font-weight: 600; font-size: 1.05rem; color: var(--ink); margin-bottom: .6rem; }
     .step-desc { font-size: 0.85rem; line-height: 1.65; color: var(--text-muted); }
 
     /* ── CONTACT ── */
@@ -325,32 +344,43 @@
       padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     .contact-detail-icon { font-size: 1.2rem; margin-top: .1rem; }
-    .contact-detail h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
+    .contact-detail h4 { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-bright); margin-bottom: .4rem; font-weight: 700; }
     .contact-detail a, .contact-detail p { color: rgba(232,220,200,0.75); font-size: 0.95rem; text-decoration: none; transition: color .2s; }
     .contact-detail a:hover { color: var(--gold-light); }
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
     .contact-form input,
     .contact-form textarea {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: var(--cream); padding: .9rem 1.2rem;
-      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
-      outline: none; transition: border-color .25s; resize: none;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      color: var(--cream); padding: 1rem 1.3rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+      outline: none; transition: all .2s ease; resize: none;
+      border-radius: 2px;
     }
     .contact-form input:focus,
-    .contact-form textarea:focus { border-color: var(--gold); }
+    .contact-form textarea:focus {
+      border-color: var(--gold-bright);
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.1);
+    }
     .contact-form input::placeholder,
     .contact-form textarea::placeholder { color: rgba(232,220,200,0.35); }
     .contact-form button {
       background: var(--gold); color: var(--ink);
-      border: none; padding: 1rem; font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
-      cursor: pointer; transition: all .2s ease; font-weight: 500;
+      border: none; padding: 1.2rem 2rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem; letter-spacing: 0.12em; text-transform: uppercase;
+      cursor: pointer; transition: all .2s ease; font-weight: 600;
+      margin-top: 0.5rem;
+      border-radius: 2px;
     }
     .contact-form button:hover {
       background: var(--gold-bright);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(168, 147, 80, 0.25);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(168, 147, 80, 0.3);
     }
 
     /* ── FOOTER ── */
