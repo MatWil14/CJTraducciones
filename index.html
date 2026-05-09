@@ -12,13 +12,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #1a1a2e;
-      --cream: #f5f0e8;
-      --warm: #e8dcc8;
-      --gold: #b8975a;
-      --gold-light: #d4b483;
-      --muted: #7a7060;
-      --white: #fdfbf7;
+      --ink: #0f0f1e;
+      --ink-alt: #2a2620;
+      --cream: #f9f7f3;
+      --warm: #e6d9ca;
+      --muted-bg: #ede7de;
+      --gold: #a89350;
+      --gold-bright: #d4a574;
+      --gold-light: #ddc9a3;
+      --text-muted: #6b6257;
+      --border: #d4cec4;
+      --white: #fefcf9;
     }
 
     html { scroll-behavior: smooth; }
@@ -49,17 +53,22 @@
     .nav-links { display: flex; gap: 2.2rem; list-style: none; }
     .nav-links a {
       font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--muted);
-      text-decoration: none; transition: color .25s;
+      text-transform: uppercase; color: var(--text-muted);
+      text-decoration: none; transition: color .2s ease;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: var(--gold-bright); }
     .nav-cta {
-      background: var(--gold); color: var(--white) !important;
+      background: var(--gold); color: var(--ink) !important;
       padding: .5rem 1.3rem; border-radius: 2px;
       font-weight: 500 !important; letter-spacing: 0.08em !important;
-      transition: background .25s !important;
+      transition: all .2s ease !important;
+      cursor: pointer;
     }
-    .nav-cta:hover { background: var(--ink) !important; color: var(--gold-light) !important; }
+    .nav-cta:hover {
+      background: var(--gold-bright) !important;
+      color: var(--ink) !important;
+      box-shadow: 0 4px 12px rgba(168, 147, 80, 0.2);
+    }
 
     /* ── HERO ── */
     .hero {
@@ -87,15 +96,16 @@
     }
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      line-height: 1.06; font-weight: 300;
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      line-height: 1.02; font-weight: 300;
+      letter-spacing: -0.03em;
       color: var(--ink);
       animation: fadeUp .8s .12s ease both;
     }
     .hero-title em { font-style: italic; color: var(--gold); }
     .hero-subtitle {
       margin-top: 1.8rem;
-      font-size: 1.05rem; line-height: 1.7; color: var(--muted);
+      font-size: 1.05rem; line-height: 1.75; color: var(--text-muted);
       max-width: 480px;
       animation: fadeUp .8s .24s ease both;
     }
@@ -105,21 +115,31 @@
       animation: fadeUp .8s .36s ease both;
     }
     .btn-primary {
-      background: var(--ink); color: var(--gold-light);
+      background: var(--ink); color: var(--white);
       padding: .9rem 2.2rem; font-size: 0.85rem;
       letter-spacing: 0.1em; text-transform: uppercase;
       text-decoration: none; border: none; cursor: pointer;
-      transition: all .28s; display: inline-block;
+      transition: all .2s ease; display: inline-block;
+      position: relative; overflow: hidden;
     }
-    .btn-primary:hover { background: var(--gold); color: var(--white); }
+    .btn-primary:hover {
+      background: var(--gold);
+      color: var(--ink);
+      box-shadow: 0 8px 24px rgba(168, 147, 80, 0.2);
+    }
     .btn-secondary {
-      border: 1px solid var(--gold); color: var(--gold);
+      border: 1.5px solid var(--gold); color: var(--gold);
       padding: .9rem 2.2rem; font-size: 0.85rem;
       letter-spacing: 0.1em; text-transform: uppercase;
       text-decoration: none; background: transparent;
-      transition: all .28s; display: inline-block;
+      transition: all .2s ease; display: inline-block;
     }
-    .btn-secondary:hover { background: var(--gold); color: var(--white); }
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+      box-shadow: 0 8px 24px rgba(168, 147, 80, 0.2);
+    }
 
     .hero-visual {
       position: relative; z-index: 1;
@@ -153,7 +173,7 @@
 
     /* ── STATS ── */
     .stats-bar {
-      background: var(--ink); color: var(--cream);
+      background: var(--ink-alt); color: var(--cream);
       display: grid; grid-template-columns: repeat(3, 1fr);
     }
     .stat-item {
@@ -163,16 +183,16 @@
     .stat-item:last-child { border-right: none; }
     .stat-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3.2rem; font-weight: 300; color: var(--gold-light);
+      font-size: 3.2rem; font-weight: 300; color: var(--gold-bright);
       line-height: 1;
     }
-    .stat-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,220,200,0.6); margin-top: .5rem; }
+    .stat-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(249,247,243,0.7); margin-top: .5rem; }
 
     /* ── SECTION COMMON ── */
     section { padding: 7rem 6%; }
     .section-tag {
       font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: .8rem;
+      color: var(--gold-bright); margin-bottom: .8rem;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
@@ -182,28 +202,28 @@
     .section-title em { font-style: italic; color: var(--gold); }
 
     /* ── SERVICES ── */
-    .services { background: var(--cream); }
+    .services { background: var(--muted-bg); }
     .services-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem; margin-top: 3.5rem;
     }
     .service-card {
       background: var(--white); padding: 2.4rem 2rem;
-      border-top: 3px solid transparent;
-      transition: border-color .3s, transform .3s, box-shadow .3s;
+      border: 1px solid var(--border);
+      transition: all .25s ease;
       position: relative; overflow: hidden;
     }
     .service-card::after {
       content: attr(data-number);
       position: absolute; top: 1.2rem; right: 1.5rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem; font-weight: 300; color: rgba(184,151,90,0.08);
+      font-size: 4rem; font-weight: 300; color: rgba(168, 147, 80, 0.1);
       line-height: 1;
     }
     .service-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(26,26,46,0.08);
+      border-color: var(--gold-bright);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(168, 147, 80, 0.12);
     }
     .service-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
     .service-name {
@@ -211,7 +231,7 @@
       font-size: 1.4rem; font-weight: 600; color: var(--ink);
       margin-bottom: .6rem;
     }
-    .service-desc { font-size: 0.88rem; line-height: 1.7; color: var(--muted); }
+    .service-desc { font-size: 0.88rem; line-height: 1.7; color: var(--text-muted); }
 
     /* ── SPECIALTIES ── */
     .specialties-inner {
@@ -221,14 +241,14 @@
     .spec-list { margin-top: 2rem; }
     .spec-item {
       display: flex; align-items: flex-start; gap: 1rem;
-      padding: 1.2rem 0; border-bottom: 1px solid rgba(26,26,46,0.08);
+      padding: 1.2rem 0; border-bottom: 1px solid var(--border);
     }
     .spec-dot {
       width: 8px; height: 8px; border-radius: 50%;
       background: var(--gold); flex-shrink: 0; margin-top: .4rem;
     }
     .spec-name { font-size: 1rem; font-weight: 500; color: var(--ink); }
-    .spec-note { font-size: 0.82rem; color: var(--muted); margin-top: .2rem; }
+    .spec-note { font-size: 0.82rem; color: var(--text-muted); margin-top: .2rem; }
 
     .spec-aside {
       background: var(--ink); padding: 3.5rem;
@@ -261,35 +281,36 @@
     .about-sticky { position: sticky; top: 8rem; }
     .cert-badge {
       margin-top: 2.5rem;
-      border: 1px solid var(--gold-light);
+      border: 1.5px solid var(--gold-bright);
       padding: 1.5rem;
     }
     .cert-badge h4 {
       font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: .6rem;
+      color: var(--gold-bright); margin-bottom: .6rem;
     }
-    .cert-badge p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
-    .about-text p { font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.4rem; }
+    .cert-badge p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+    .about-text p { font-size: 1rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.4rem; }
     .about-text p strong { color: var(--ink); font-weight: 500; }
 
     /* ── PROCESS ── */
-    .process { background: var(--cream); }
+    .process { background: var(--muted-bg); }
     .process-steps {
       display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 0; margin-top: 3.5rem;
     }
     .step {
       padding: 2.5rem 2rem; position: relative;
-      border-right: 1px solid rgba(26,26,46,0.1);
+      border-right: 1px solid var(--border);
     }
     .step:last-child { border-right: none; }
     .step-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem; font-weight: 300; color: rgba(184,151,90,0.3);
+      font-size: 3rem; font-weight: 300; color: var(--gold-bright);
+      opacity: 0.3;
       line-height: 1; margin-bottom: 1rem;
     }
     .step-title { font-weight: 500; font-size: 1rem; color: var(--ink); margin-bottom: .5rem; }
-    .step-desc { font-size: 0.85rem; line-height: 1.65; color: var(--muted); }
+    .step-desc { font-size: 0.85rem; line-height: 1.65; color: var(--text-muted); }
 
     /* ── CONTACT ── */
     .contact { background: var(--ink); color: var(--cream); }
@@ -301,7 +322,7 @@
     }
     .contact-detail {
       display: flex; align-items: flex-start; gap: 1.2rem;
-      padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     .contact-detail-icon { font-size: 1.2rem; margin-top: .1rem; }
     .contact-detail h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
@@ -321,12 +342,16 @@
     .contact-form input::placeholder,
     .contact-form textarea::placeholder { color: rgba(232,220,200,0.35); }
     .contact-form button {
-      background: var(--gold); color: var(--white);
+      background: var(--gold); color: var(--ink);
       border: none; padding: 1rem; font-family: 'DM Sans', sans-serif;
       font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
-      cursor: pointer; transition: background .28s; font-weight: 500;
+      cursor: pointer; transition: all .2s ease; font-weight: 500;
     }
-    .contact-form button:hover { background: var(--gold-light); }
+    .contact-form button:hover {
+      background: var(--gold-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(168, 147, 80, 0.25);
+    }
 
     /* ── FOOTER ── */
     footer {
