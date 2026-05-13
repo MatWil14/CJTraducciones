@@ -396,6 +396,12 @@
     <li><a href="#sobre-mi" onclick="closeNav()">Sobre mí</a></li>
     <li><a href="#proceso" onclick="closeNav()">Proceso</a></li>
     <li><a href="#contacto" class="nav-cta" onclick="closeNav()">Solicitar presupuesto</a></li>
+    <li style="margin-left: auto;">
+      <select id="langSelector" onchange="changeLanguage(this.value)" style="padding: 0.5rem; border: 1px solid var(--gold); background: var(--white); color: var(--ink); cursor: pointer; border-radius: 2px;">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+      </select>
+    </li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
     <span></span><span></span><span></span>
@@ -470,7 +476,7 @@
     <div class="service-card" data-number="04">
       <div class="service-icon">🔬</div>
       <h3 class="service-name">Traducción Técnico-Científica y Literaria</h3>
-      <p class="service-desc">Investigación, artículos científicos, literatura técnica y obras literarias.</p>
+      <p class="service-desc">Investigación, artículos científicos y obras literarias.</p>
     </div>
     <div class="service-card" data-number="05">
       <div class="service-icon">📜</div>
@@ -560,7 +566,7 @@
       <h2 class="section-title">Carolina<br><em>Jusid</em></h2>
       <div class="cert-badge">
         <h4>Certificación oficial</h4>
-        <p>Traductora matriculada en el <strong>Colegio de Traductores Públicos de la Ciudad de Buenos Aires</strong>, Argentina.</p>
+        <p>Traductora matriculada en el <strong>Colegio de Traductores Públicos de la Ciudad de Buenos Aires</strong>.</p>
       </div>
     </div>
     <div class="about-text">
@@ -693,4 +699,68 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.service-card,
+  document.querySelectorAll('.service-card, .spec-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Language translations
+  const translations = {
+    es: {
+      servicios: 'Servicios',
+      especialidades: 'Especialidades',
+      sobremí: 'Sobre mí',
+      proceso: 'Proceso',
+      presupuesto: 'Solicitar presupuesto',
+      hablemos: 'Hablemos',
+      solicitaPresupuesto: 'Solicitá tu presupuesto',
+      loQuehago: 'Lo que hago',
+      profesionales: 'profesionales',
+      misAreas: 'Mis áreas',
+      temáticas: 'temáticas',
+      comoTrabajo: 'Cómo trabajo',
+      transparente: 'transparente',
+      cmoTrabajo2: 'Un proceso',
+      certificada: 'Traductora & Correctora Certificada',
+      palabras: 'Palabras que cruzan fronteras sin perder sentido',
+      traducciones: 'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.',
+      anosIndustria: 'Años en la industria',
+      idiomas: 'Idiomas · Inglés & Español',
+      areas: 'Áreas de especialización'
+    },
+    en: {
+      servicios: 'Services',
+      especialidades: 'Specialties',
+      sobremí: 'About',
+      proceso: 'Process',
+      presupuesto: 'Get a Quote',
+      hablemos: 'Let\'s Talk',
+      solicitaPresupuesto: 'Get Your Quote',
+      loQuehago: 'What I Do',
+      profesionales: 'Professional',
+      misAreas: 'My Areas',
+      temáticas: 'Specializations',
+      comoTrabajo: 'How I Work',
+      transparente: 'Transparent',
+      cmoTrabajo2: 'A',
+      certificada: 'Certified Translator & Proofreader',
+      palabras: 'Words that cross borders without losing meaning',
+      traducciones: 'Public, technical-scientific and literary translations from English ↔ Spanish backed by over 20 years of experience and official certification in Argentina.',
+      anosIndustria: 'Years in the industry',
+      idiomas: 'Languages · English & Spanish',
+      areas: 'Specialization areas'
+    }
+  };
+
+  function changeLanguage(lang) {
+    localStorage.setItem('language', lang);
+    if (lang === 'en') {
+      document.documentElement.lang = 'en';
+      alert('Translation feature coming soon! For now, you can use your browser\'s translation feature.');
+    } else {
+      document.documentElement.lang = 'es';
+    }
+  }
+
+  // Load saved language
+  const savedLang = localStorage.getItem('language') || 'es';
+  document.getElementById('langSelector').value = savedLang;
