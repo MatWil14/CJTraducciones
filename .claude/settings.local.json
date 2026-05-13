@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python3 \"C:\\\\Users\\\\User\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"translator portfolio service professional elegant modern\" --design-system -p \"CJTraducciones Redesign\" -f markdown)",
+      "PowerShell(python3 \"C:\\\\Users\\\\User\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"professional minimalism dark elegant luxury\" --domain style -n 5)",
+      "PowerShell(python3 \"C:\\\\Users\\\\User\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"beige gold luxury professional warm elegant service\" --domain color -n 5)",
+      "Bash(start *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(powershell *)",
+      "Bash(git push *)",
+      "Bash(python -m http.server 8000 --bind 127.0.0.1)",
+      "Bash(curl -s \"https://cj-traducciones.vercel.app/\")",
+      "Bash(git commit *)"
+    ]
+  }
+}

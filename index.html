@@ -12,17 +12,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #0f0f1e;
-      --ink-alt: #2a2620;
-      --cream: #f9f7f3;
-      --warm: #e6d9ca;
-      --muted-bg: #ede7de;
-      --gold: #a89350;
-      --gold-bright: #d4a574;
-      --gold-light: #ddc9a3;
-      --text-muted: #6b6257;
-      --border: #d4cec4;
-      --white: #fefcf9;
+      --ink: #1a1a2e;
+      --cream: #f5f0e8;
+      --warm: #e8dcc8;
+      --gold: #b8975a;
+      --gold-light: #d4b483;
+      --muted: #7a7060;
+      --white: #fdfbf7;
     }
 
     html { scroll-behavior: smooth; }
@@ -53,22 +49,17 @@
     .nav-links { display: flex; gap: 2.2rem; list-style: none; }
     .nav-links a {
       font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--text-muted);
-      text-decoration: none; transition: color .2s ease;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color .25s;
     }
-    .nav-links a:hover { color: var(--gold-bright); }
+    .nav-links a:hover { color: var(--gold); }
     .nav-cta {
-      background: var(--gold); color: var(--ink) !important;
+      background: var(--gold); color: var(--white) !important;
       padding: .5rem 1.3rem; border-radius: 2px;
       font-weight: 500 !important; letter-spacing: 0.08em !important;
-      transition: all .2s ease !important;
-      cursor: pointer;
+      transition: background .25s !important;
     }
-    .nav-cta:hover {
-      background: var(--gold-bright) !important;
-      color: var(--ink) !important;
-      box-shadow: 0 4px 12px rgba(168, 147, 80, 0.2);
-    }
+    .nav-cta:hover { background: var(--ink) !important; color: var(--gold-light) !important; }
 
     /* ── HERO ── */
     .hero {
@@ -96,16 +87,15 @@
     }
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.2rem, 6vw, 6rem);
-      line-height: 1.02; font-weight: 300;
-      letter-spacing: -0.03em;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: 1.06; font-weight: 300;
       color: var(--ink);
       animation: fadeUp .8s .12s ease both;
     }
     .hero-title em { font-style: italic; color: var(--gold); }
     .hero-subtitle {
       margin-top: 1.8rem;
-      font-size: 1.05rem; line-height: 1.75; color: var(--text-muted);
+      font-size: 1.05rem; line-height: 1.7; color: var(--muted);
       max-width: 480px;
       animation: fadeUp .8s .24s ease both;
     }
@@ -115,31 +105,21 @@
       animation: fadeUp .8s .36s ease both;
     }
     .btn-primary {
-      background: var(--ink); color: var(--white);
+      background: var(--ink); color: var(--gold-light);
       padding: .9rem 2.2rem; font-size: 0.85rem;
       letter-spacing: 0.1em; text-transform: uppercase;
       text-decoration: none; border: none; cursor: pointer;
-      transition: all .2s ease; display: inline-block;
-      position: relative; overflow: hidden;
+      transition: all .28s; display: inline-block;
     }
-    .btn-primary:hover {
-      background: var(--gold);
-      color: var(--ink);
-      box-shadow: 0 8px 24px rgba(168, 147, 80, 0.2);
-    }
+    .btn-primary:hover { background: var(--gold); color: var(--white); }
     .btn-secondary {
-      border: 1.5px solid var(--gold); color: var(--gold);
+      border: 1px solid var(--gold); color: var(--gold);
       padding: .9rem 2.2rem; font-size: 0.85rem;
       letter-spacing: 0.1em; text-transform: uppercase;
       text-decoration: none; background: transparent;
-      transition: all .2s ease; display: inline-block;
+      transition: all .28s; display: inline-block;
     }
-    .btn-secondary:hover {
-      background: var(--gold);
-      color: var(--white);
-      border-color: var(--gold);
-      box-shadow: 0 8px 24px rgba(168, 147, 80, 0.2);
-    }
+    .btn-secondary:hover { background: var(--gold); color: var(--white); }
 
     .hero-visual {
       position: relative; z-index: 1;
@@ -147,7 +127,7 @@
       animation: fadeIn 1.2s .2s ease both;
     }
     .portrait-frame {
-      position: relative; width: 420px; height: 520px;
+      position: relative; width: 380px; height: 460px;
     }
     .portrait-frame::before {
       content: '';
@@ -163,36 +143,36 @@
       filter: sepia(10%) contrast(1.05);
     }
     .portrait-badge {
-      position: absolute; bottom: -20px; left: -20px; z-index: 2;
-      background: var(--gold-bright); color: var(--ink);
-      padding: 1.2rem 1.6rem; font-size: 0.76rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      font-weight: 600; box-shadow: 0 12px 40px rgba(212, 165, 116, 0.3);
+      position: absolute; bottom: -16px; left: -16px; z-index: 2;
+      background: var(--gold); color: var(--white);
+      padding: 1rem 1.4rem; font-size: 0.78rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      font-weight: 500; box-shadow: 0 8px 32px rgba(184,151,90,0.35);
     }
-    .portrait-badge strong { display: block; font-size: 1.6rem; font-family: 'Cormorant Garamond', serif; letter-spacing: 0; text-transform: none; font-weight: 700; }
+    .portrait-badge strong { display: block; font-size: 1.3rem; font-family: 'Cormorant Garamond', serif; letter-spacing: 0; text-transform: none; }
 
     /* ── STATS ── */
     .stats-bar {
-      background: var(--ink-alt); color: var(--cream);
+      background: var(--ink); color: var(--cream);
       display: grid; grid-template-columns: repeat(3, 1fr);
     }
     .stat-item {
-      padding: 3rem 2rem; text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.1);
+      padding: 2.5rem 2rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
     }
     .stat-item:last-child { border-right: none; }
     .stat-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem; font-weight: 300; color: var(--gold-bright);
+      font-size: 3.2rem; font-weight: 300; color: var(--gold-light);
       line-height: 1;
     }
-    .stat-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(249,247,243,0.7); margin-top: .5rem; }
+    .stat-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,220,200,0.6); margin-top: .5rem; }
 
     /* ── SECTION COMMON ── */
     section { padding: 7rem 6%; }
     .section-tag {
       font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold-bright); margin-bottom: .8rem;
+      color: var(--gold); margin-bottom: .8rem;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
@@ -202,56 +182,52 @@
     .section-title em { font-style: italic; color: var(--gold); }
 
     /* ── SERVICES ── */
-    .services { background: var(--muted-bg); }
+    .services { background: var(--cream); }
     .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem; margin-top: 3.5rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem; margin-top: 3.5rem;
     }
     .service-card {
-      background: var(--white); padding: 2rem 1.8rem;
-      border: 1px solid var(--border);
-      transition: all .25s ease;
+      background: var(--white); padding: 2.4rem 2rem;
+      border-top: 3px solid transparent;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
       position: relative; overflow: hidden;
-      display: flex;
-      flex-direction: column;
     }
     .service-card::after {
       content: attr(data-number);
-      position: absolute; top: 0.8rem; right: 1rem;
+      position: absolute; top: 1.2rem; right: 1.5rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 4.5rem; font-weight: 300; color: var(--gold-bright);
-      opacity: 0.15;
+      font-size: 4rem; font-weight: 300; color: rgba(184,151,90,0.08);
       line-height: 1;
     }
     .service-card:hover {
-      border-color: var(--gold-bright);
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(168, 147, 80, 0.12);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(26,26,46,0.08);
     }
-    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .service-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
     .service-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem; font-weight: 600; color: var(--ink);
       margin-bottom: .6rem;
     }
-    .service-desc { font-size: 0.88rem; line-height: 1.7; color: var(--text-muted); }
+    .service-desc { font-size: 0.88rem; line-height: 1.7; color: var(--muted); }
 
     /* ── SPECIALTIES ── */
     .specialties-inner {
-      display: grid; grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: 1fr;
       gap: 5rem; align-items: center;
     }
-    .spec-list { margin-top: 2.5rem; }
+    .spec-aside { display: none; }
+    .spec-list { margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.8rem; }
     .spec-item {
-      display: flex; align-items: flex-start; gap: 1rem;
-      padding: 1.2rem 0; border-bottom: 1px solid var(--border);
+      display: flex; flex-direction: column; background: var(--white); padding: 2rem; border: 1px solid var(--gold-light); transition: all .3s;
     }
-    .spec-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--gold); flex-shrink: 0; margin-top: .4rem;
-    }
-    .spec-name { font-size: 1rem; font-weight: 600; color: var(--ink); }
-    .spec-note { font-size: 0.82rem; color: var(--text-muted); margin-top: .2rem; }
+    .spec-item:hover { box-shadow: 0 8px 24px rgba(184,151,90,0.15); transform: translateY(-4px); }
+    .spec-item:hover .spec-icon { transform: scale(1.2) rotate(5deg); }
+    .spec-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .spec-name { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: .4rem; }
+    .spec-note { font-size: 0.82rem; color: var(--muted); }
 
     .spec-aside {
       background: var(--ink); padding: 3.5rem;
@@ -265,8 +241,8 @@
     }
     .spec-quote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.9rem; font-weight: 300; font-style: italic;
-      color: var(--cream); line-height: 1.6;
+      font-size: 1.6rem; font-weight: 300; font-style: italic;
+      color: var(--cream); line-height: 1.5;
       position: relative; z-index: 1;
     }
     .spec-cite {
@@ -281,55 +257,38 @@
       display: grid; grid-template-columns: 1fr 1.4fr;
       gap: 6rem; align-items: start;
     }
-    .about-sticky {
-      position: sticky;
-      top: 8rem;
-    }
-    .about-sticky .section-title {
-      font-size: clamp(2.4rem, 3.5vw, 3.5rem);
-    }
+    .about-sticky { position: sticky; top: 8rem; }
     .cert-badge {
-      margin-top: 3rem;
-      border: 2px solid var(--gold-bright);
-      padding: 2rem;
-      background: rgba(212, 165, 116, 0.05);
+      margin-top: 2.5rem;
+      border: 1px solid var(--gold-light);
+      padding: 1.5rem;
     }
     .cert-badge h4 {
-      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold-bright); margin-bottom: .8rem;
-      font-weight: 700;
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .6rem;
     }
-    .cert-badge p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
-    .about-text p { font-size: 1rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 1.6rem; }
+    .cert-badge p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+    .about-text p { font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.4rem; }
     .about-text p strong { color: var(--ink); font-weight: 500; }
 
     /* ── PROCESS ── */
-    .process { background: var(--muted-bg); }
+    .process { background: var(--cream); }
     .process-steps {
       display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 0; margin-top: 3.5rem;
-      position: relative;
-    }
-    .process-steps::before {
-      content: '';
-      position: absolute; top: 4.5rem; left: 5%; right: 5%; height: 2px;
-      background: linear-gradient(90deg, var(--gold-bright) 0%, var(--gold-bright) 20%, transparent 20%, transparent 80%, var(--gold-bright) 80%, var(--gold-bright) 100%);
-      z-index: 0;
     }
     .step {
       padding: 2.5rem 2rem; position: relative;
-      border-right: 1px solid var(--border);
-      z-index: 1;
+      border-right: 1px solid rgba(26,26,46,0.1);
     }
     .step:last-child { border-right: none; }
     .step-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem; font-weight: 400; color: var(--gold-bright);
+      font-size: 3rem; font-weight: 300; color: rgba(184,151,90,0.3);
       line-height: 1; margin-bottom: 1rem;
-      opacity: 0.4;
     }
-    .step-title { font-weight: 600; font-size: 1.05rem; color: var(--ink); margin-bottom: .6rem; }
-    .step-desc { font-size: 0.85rem; line-height: 1.65; color: var(--text-muted); }
+    .step-title { font-weight: 500; font-size: 1rem; color: var(--ink); margin-bottom: .5rem; }
+    .step-desc { font-size: 0.85rem; line-height: 1.65; color: var(--muted); }
 
     /* ── CONTACT ── */
     .contact { background: var(--ink); color: var(--cream); }
@@ -341,47 +300,32 @@
     }
     .contact-detail {
       display: flex; align-items: flex-start; gap: 1.2rem;
-      padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .contact-detail-icon { font-size: 1.2rem; margin-top: .1rem; }
-    .contact-detail h4 { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-bright); margin-bottom: .4rem; font-weight: 700; }
+    .contact-detail h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
     .contact-detail a, .contact-detail p { color: rgba(232,220,200,0.75); font-size: 0.95rem; text-decoration: none; transition: color .2s; }
     .contact-detail a:hover { color: var(--gold-light); }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
     .contact-form input,
     .contact-form textarea {
-      background: rgba(255,255,255,0.08);
-      border: 1.5px solid rgba(255,255,255,0.15);
-      color: var(--cream); padding: 1rem 1.3rem;
-      font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
-      outline: none; transition: all .2s ease; resize: none;
-      border-radius: 2px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--cream); padding: .9rem 1.2rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      outline: none; transition: border-color .25s; resize: none;
     }
     .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: var(--gold-bright);
-      background: rgba(255,255,255,0.12);
-      box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.1);
-    }
+    .contact-form textarea:focus { border-color: var(--gold); }
     .contact-form input::placeholder,
     .contact-form textarea::placeholder { color: rgba(232,220,200,0.35); }
     .contact-form button {
-      background: var(--gold); color: var(--ink);
-      border: none; padding: 1.2rem 2rem; font-family: 'DM Sans', sans-serif;
-      font-size: 0.88rem; letter-spacing: 0.12em; text-transform: uppercase;
-      cursor: pointer; transition: all .2s ease; font-weight: 600;
-      margin-top: 0.5rem;
-      border-radius: 2px;
+      background: var(--gold); color: var(--white);
+      border: none; padding: 1rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: background .28s; font-weight: 500;
     }
-    .contact-form button:hover {
-      background: var(--gold-bright);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(168, 147, 80, 0.3);
-    }
+    .contact-form button:hover { background: var(--gold-light); }
 
     /* ── FOOTER ── */
     footer {
@@ -466,7 +410,7 @@
       Palabras que<br>cruzan <em>fronteras</em><br>sin perder sentido
     </h1>
     <p class="hero-subtitle">
-      Traducciones y correcciones de precisión en inglés y español, respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.
+      Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.
     </p>
     <div class="hero-actions">
       <a href="#contacto" class="btn-primary">Solicitar presupuesto</a>
@@ -531,7 +475,7 @@
     <div class="service-card" data-number="05">
       <div class="service-icon">📜</div>
       <h3 class="service-name">Traducciones Públicas</h3>
-      <p class="service-desc">Documentos oficiales, partidas, certificados con legalización y apostilla.</p>
+      <p class="service-desc">Documentos oficiales, partidas, certificados con legalización y Apostilla con firma ológrafa y digital</p>
     </div>
     <div class="service-card" data-number="06">
       <div class="service-icon">🌐</div>
@@ -549,49 +493,49 @@
       <h2 class="section-title">Especialidades<br><em>temáticas</em></h2>
       <div class="spec-list">
         <div class="spec-item">
-          <div class="spec-dot"></div>
+          <div class="spec-icon">🏥</div>
           <div>
             <div class="spec-name">Medicina y Salud</div>
             <div class="spec-note">Informes clínicos, ensayos, guías nutricionales</div>
           </div>
         </div>
         <div class="spec-item">
-          <div class="spec-dot"></div>
+          <div class="spec-icon">📚</div>
           <div>
             <div class="spec-name">Educación</div>
             <div class="spec-note">Materiales didácticos, libros infantiles, programas</div>
           </div>
         </div>
         <div class="spec-item">
-          <div class="spec-dot"></div>
+          <div class="spec-icon">🛡️</div>
           <div>
             <div class="spec-name">Seguros</div>
             <div class="spec-note">Pólizas, cláusulas, manuales de cobertura</div>
           </div>
         </div>
         <div class="spec-item">
-          <div class="spec-dot"></div>
+          <div class="spec-icon">👥</div>
           <div>
             <div class="spec-name">Recursos Humanos</div>
             <div class="spec-note">Manuales de empleados, políticas corporativas</div>
           </div>
         </div>
         <div class="spec-item">
-          <div class="spec-dot"></div>
+          <div class="spec-icon">📰</div>
           <div>
             <div class="spec-name">Ciencias Sociales &amp; Periodismo</div>
             <div class="spec-note">Investigación, artículos, reportajes</div>
           </div>
         </div>
         <div class="spec-item">
-          <div class="spec-dot"></div>
+          <div class="spec-icon">⚙️</div>
           <div>
-            <div class="spec-name">Seguridad &amp; Manuales técnicos</div>
+            <div class="spec-name">Seguridad &amp; Manuales Técnicos</div>
             <div class="spec-note">Procedimientos, equipos, normas de seguridad</div>
           </div>
         </div>
         <div class="spec-item">
-          <div class="spec-dot"></div>
+          <div class="spec-icon">✈️</div>
           <div>
             <div class="spec-name">Turismo &amp; Hotelería</div>
             <div class="spec-note">Guías de viaje, materiales de alojamiento</div>
@@ -621,7 +565,7 @@
     </div>
     <div class="about-text">
       <p>Soy Carolina Jusid, traductora y correctora certificada con <strong>más de 20 años de trayectoria</strong> en el mercado de la traducción profesional inglés-español.</p>
-      <p>Desde 2005 dirijo <strong>CJTraducciones</strong>, mi estudio independiente desde el que ofrezco servicios de traducción y corrección a clientes en Argentina y en el exterior.</p>
+      <p>Desde 2005 dirijo <strong>CJTraducciones</strong>, que ofrece servicios de traducción y corrección a clientes en Argentina y en el exterior.</p>
       <p>A lo largo de mi carrera he trabajado con una enorme variedad de textos: desde <strong>manuales de empleados y guías nutricionales</strong> hasta <strong>libros infantiles y procedimientos de seguridad industrial</strong>. Esta diversidad me ha dado una flexibilidad y precisión que va más allá de la especialidad.</p>
       <p>Mi enfoque siempre es el mismo: entregarle al cliente un texto que lea como si hubiera sido escrito originalmente en el idioma de destino, sin perder ni una pizca del sentido original.</p>
       <p>Cuento con <strong>más de 500 contactos profesionales</strong> en la industria y referencias de colegas reconocidos del sector.</p>
@@ -688,7 +632,7 @@
         <div class="contact-detail-icon">🏛️</div>
         <div>
           <h4>Certificación</h4>
-          <p>Colegio de Traductores Públicos · CABA</p>
+          <p>Colegio de Traductores Públicos de la Ciudad de Buenos Aires</p>
         </div>
       </div>
     </div>
