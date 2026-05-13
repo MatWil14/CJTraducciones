@@ -387,15 +387,186 @@
 </head>
 <body>
 
+<script>
+const translations = {
+  'Traductora & Correctora Certificada': 'Certified Translator & Proofreader',
+  'Palabras que cruzan fronteras sin perder sentido': 'Words that cross borders without losing meaning',
+  'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.': 'Public, technical-scientific and literary translations from English ↔ Spanish backed by over 20 years of experience and official certification in Argentina.',
+  'Solicitar presupuesto': 'Get a Quote',
+  'Ver servicios': 'View Services',
+  'años de experiencia': 'years of experience',
+  'Años en la industria': 'Years in the industry',
+  'Idiomas · Inglés & Español': 'Languages · English & Spanish',
+  'Áreas de especialización': 'Specialization areas',
+  'Lo que hago': 'What I Do',
+  'Servicios profesionales': 'Professional Services',
+  'Educación': 'Education',
+  'Libros de texto, materiales didácticos, certificaciones y libros infantiles.': 'Textbooks, teaching materials, certifications and children\'s books.',
+  'Medicina': 'Medicine',
+  'Informes clínicos, estudios médicos, guías nutricionales y farmacología.': 'Clinical reports, medical studies, nutritional guides and pharmacology.',
+  'Seguros': 'Insurance',
+  'Pólizas, contratos, manuales de procedimientos y documentación legal.': 'Policies, contracts, procedure manuals and legal documentation.',
+  'Traducción Técnico-Científica y Literaria': 'Technical-Scientific and Literary Translation',
+  'Investigación, artículos científicos y obras literarias.': 'Research, scientific articles and literary works.',
+  'Traducciones Públicas': 'Public Translations',
+  'Documentos oficiales, partidas, certificados con legalización y Apostilla con firma ológrafa y digital': 'Official documents, certificates, legalization and Apostille with holographic and digital signature',
+  'Otros Campos': 'Other Fields',
+  'Ciencias Sociales, Periodismo, Manuales Técnicos, Seguridad, Turismo.': 'Social Sciences, Journalism, Technical Manuals, Security, Tourism.',
+  'Mis áreas': 'My Areas',
+  'Especialidades temáticas': 'Specializations',
+  'Medicina y Salud': 'Medicine and Health',
+  'Informes clínicos, ensayos, guías nutricionales': 'Clinical reports, essays, nutritional guides',
+  'Materiales didácticos, libros infantiles, programas': 'Teaching materials, children\'s books, programs',
+  'Pólizas, cláusulas, manuales de cobertura': 'Policies, clauses, coverage manuals',
+  'Recursos Humanos': 'Human Resources',
+  'Manuales de empleados, políticas corporativas': 'Employee manuals, corporate policies',
+  'Ciencias Sociales & Periodismo': 'Social Sciences & Journalism',
+  'Investigación, artículos, reportajes': 'Research, articles, reports',
+  'Seguridad & Manuales Técnicos': 'Security & Technical Manuals',
+  'Procedimientos, equipos, normas de seguridad': 'Procedures, equipment, safety standards',
+  'Turismo & Hotelería': 'Tourism & Hospitality',
+  'Guías de viaje, materiales de alojamiento': 'Travel guides, accommodation materials',
+  'Sobre mí': 'About',
+  'Carolina Jusid': 'Carolina Jusid',
+  'Certificación oficial': 'Official Certification',
+  'Traductora matriculada en el Colegio de Traductores Públicos de la Ciudad de Buenos Aires.': 'Certified translator registered with the College of Public Translators of the City of Buenos Aires.',
+  'Soy Carolina Jusid, traductora y correctora certificada con más de 20 años de trayectoria en el mercado de la traducción profesional inglés-español.': 'I am Carolina Jusid, a certified translator and proofreader with over 20 years of experience in the professional English-Spanish translation market.',
+  'Desde 2005 dirijo CJTraducciones, que ofrece servicios de traducción y corrección a clientes en Argentina y en el exterior.': 'Since 2005 I have directed CJTraducciones, which offers translation and proofreading services to clients in Argentina and abroad.',
+  'A lo largo de mi carrera he trabajado con una enorme variedad de textos: desde manuales de empleados y guías nutricionales hasta libros infantiles y procedimientos de seguridad industrial. Esta diversidad me ha dado una flexibilidad y precisión que va más allá de la especialidad.': 'Throughout my career I have worked with a huge variety of texts: from employee manuals and nutritional guides to children\'s books and industrial safety procedures. This diversity has given me a flexibility and precision that goes beyond specialization.',
+  'Mi enfoque siempre es el mismo: entregarle al cliente un texto que lea como si hubiera sido escrito originalmente en el idioma de destino, sin perder ni una pizca del sentido original.': 'My approach is always the same: to deliver to the client a text that reads as if it had been originally written in the target language, without losing a bit of the original meaning.',
+  'Cuento con más de 500 contactos profesionales en la industria y referencias de colegas reconocidos del sector.': 'I have over 500 professional contacts in the industry and references from recognized colleagues in the field.',
+  'Cómo trabajo': 'How I Work',
+  'Un proceso transparente': 'A Transparent Process',
+  'Consulta inicial': 'Initial Consultation',
+  'Me enviás el documento o describís tu proyecto. Analizo el material, el par de idiomas y el uso final.': 'You send me the document or describe your project. I analyze the material, the language pair and the final use.',
+  'Presupuesto & plazos': 'Quote & Deadlines',
+  'Te entrego un presupuesto claro y un plazo de entrega realista. Sin costos ocultos.': 'I provide you with a clear quote and a realistic delivery deadline. No hidden costs.',
+  'Traducción y revisión': 'Translation and Review',
+  'Traduzco, reviso y corrijo el texto. Verifico terminología, coherencia y registro antes de enviarte nada.': 'I translate, review and proofread the text. I verify terminology, consistency and tone before sending anything to you.',
+  'Entrega y ajustes': 'Delivery and Adjustments',
+  'Recibís el trabajo finalizado. Si necesitás algún ajuste puntual, lo atendemos con rapidez.': 'You receive the finished work. If you need any specific adjustments, we handle them quickly.',
+  'Hablemos': "Let's Talk",
+  'Solicitá tu presupuesto': 'Get Your Quote',
+  'Email': 'Email',
+  'Idiomas': 'Languages',
+  'Inglés ↔ Español': 'English ↔ Spanish',
+  'Ubicación': 'Location',
+  'Buenos Aires, Argentina · Servicios remotos a nivel global': 'Buenos Aires, Argentina · Remote services worldwide',
+  'Certificación': 'Certification',
+  'Colegio de Traductores Públicos de la Ciudad de Buenos Aires': 'College of Public Translators of the City of Buenos Aires',
+  'Tu nombre': 'Your name',
+  'Tu email': 'Your email',
+  'Asunto / Tipo de documento': 'Subject / Document type',
+  'Contame sobre tu proyecto...': 'Tell me about your project...',
+  'Enviar consulta →': 'Send inquiry →',
+  'CJTraducciones': 'CJTraducciones',
+  'Traductora y Correctora Certificada': 'Certified Translator and Proofreader',
+  'Especialidades': 'Specialties',
+  'Proceso': 'Process',
+  'Servicios': 'Services',
+  'profesionales': 'Professional',
+  'temáticas': 'Specializations',
+  'transparente': 'Transparent',
+  '© 2025': '© 2025',
+  'más de 20 años de trayectoria': 'over 20 years of experience',
+  'más de 500 contactos profesionales': 'over 500 professional contacts',
+  'Soy Carolina Jusid, traductora y correctora certificada con': 'I am Carolina Jusid, a certified translator and proofreader with',
+  'más de 20 años de trayectoria': 'over 20 years of experience',
+  'en el mercado de la traducción profesional inglés-español.': 'in the professional English-Spanish translation market.',
+  'Desde 2005 dirijo': 'Since 2005 I have directed',
+  'que ofrece servicios de traducción y corrección a clientes en Argentina y en el exterior.': 'which offers translation and proofreading services to clients in Argentina and abroad.',
+  'A lo largo de mi carrera he trabajado con una enorme variedad de textos: desde': 'Throughout my career I have worked with a huge variety of texts: from',
+  'manuales de empleados y guías nutricionales': 'employee manuals and nutritional guides',
+  'hasta': 'to',
+  'libros infantiles y procedimientos de seguridad industrial': 'children\'s books and industrial safety procedures',
+  'Esta diversidad me ha dado una flexibilidad y precisión que va más allá de la especialidad.': 'This diversity has given me a flexibility and precision that goes beyond specialization.',
+  'Cuento con': 'I have',
+  'en la industria y referencias de colegas reconocidos del sector.': 'in the industry and references from recognized colleagues in the field.',
+  'Me enviás el documento o describís tu proyecto. Analizo el material, el par de idiomas y el uso final.': 'You send me the document or describe your project. I analyze the material, the language pair and the final use.',
+  'Te entrego un presupuesto claro y un plazo de entrega realista. Sin costos ocultos.': 'I provide you with a clear quote and a realistic delivery deadline. No hidden costs.',
+  'Traduzco, reviso y corrijo el texto. Verifico terminología, coherencia y registro antes de enviarte nada.': 'I translate, review and proofread the text. I verify terminology, consistency and tone before sending anything to you.',
+  'Recibís el trabajo finalizado. Si necesitás algún ajuste puntual, lo atendemos con rapidez.': 'You receive the finished work. If you need any specific adjustments, we handle them quickly.',
+  'Cómo trabajo': 'How I Work',
+  'Me enviás': 'You send me',
+  'describís': 'describe',
+  'Analizo': 'I analyze',
+  'Te entrego': 'I provide you with',
+  'Sin costos ocultos.': 'No hidden costs.',
+  'Traduzco,': 'I translate,',
+  'Verifico': 'I verify',
+  'Recibís': 'You receive',
+  'Si necesitás': 'If you need',
+  'lo atendemos': 'we handle',
+  'Palabras que': 'Words that',
+  'cruzan': 'cross',
+  'fronteras': 'borders',
+  'sin perder sentido': 'without losing meaning',
+  'Un proceso': 'A',
+  'transparente': 'Transparent Process',
+  'Solicitá tu': 'Get Your',
+  'presupuesto': 'Quote'
+};
+
+function translatePage() {
+  const orderedKeys = Object.keys(translations).sort((a, b) => b.length - a.length);
+
+  // Traducir nodos de texto
+  for (const key of orderedKeys) {
+    const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+    const value = translations[key];
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    const nodes = [];
+    let node;
+
+    while (node = walker.nextNode()) {
+      if (node.textContent.includes(key)) {
+        nodes.push(node);
+      }
+    }
+
+    nodes.forEach(textNode => {
+      textNode.textContent = textNode.textContent.replace(regex, value);
+    });
+  }
+
+  // Traducir atributos
+  const allElements = document.querySelectorAll('*');
+  allElements.forEach(el => {
+    const attrs = ['placeholder', 'title', 'alt', 'aria-label'];
+    attrs.forEach(attr => {
+      if (el.hasAttribute(attr)) {
+        let val = el.getAttribute(attr);
+        for (const key of orderedKeys) {
+          const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+          val = val.replace(regex, translations[key]);
+        }
+        el.setAttribute(attr, val);
+      }
+    });
+  });
+}
+
+function changeLanguage(lang) {
+  localStorage.setItem('language', lang);
+  document.documentElement.lang = lang;
+  if (lang === 'en') {
+    translatePage();
+  } else {
+    location.reload();
+  }
+}
+</script>
+
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-brand">CJ<span>Traducciones</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#servicios" onclick="closeNav()">Servicios</a></li>
-    <li><a href="#especialidades" onclick="closeNav()">Especialidades</a></li>
-    <li><a href="#sobre-mi" onclick="closeNav()">Sobre mí</a></li>
-    <li><a href="#proceso" onclick="closeNav()">Proceso</a></li>
-    <li><a href="#contacto" class="nav-cta" onclick="closeNav()">Solicitar presupuesto</a></li>
+    <li><a href="#servicios" onclick="closeNav()" data-i18n="Servicios">Servicios</a></li>
+    <li><a href="#especialidades" onclick="closeNav()" data-i18n="Especialidades">Especialidades</a></li>
+    <li><a href="#sobre-mi" onclick="closeNav()" data-i18n="Sobre mí">Sobre mí</a></li>
+    <li><a href="#proceso" onclick="closeNav()" data-i18n="Proceso">Proceso</a></li>
+    <li><a href="#contacto" class="nav-cta" onclick="closeNav()" data-i18n="Solicitar presupuesto">Solicitar presupuesto</a></li>
     <li style="margin-left: auto;">
       <select id="langSelector" onchange="changeLanguage(this.value)" style="padding: 0.5rem; border: 1px solid var(--gold); background: var(--white); color: var(--ink); cursor: pointer; border-radius: 2px;">
         <option value="es">Español</option>
@@ -455,8 +626,8 @@
 
 <!-- SERVICES -->
 <section class="services" id="servicios">
-  <div class="section-tag">Lo que hago</div>
-  <h2 class="section-title">Servicios <em>profesionales</em></h2>
+  <div class="section-tag" data-i18n="Lo que hago">Lo que hago</div>
+  <h2 class="section-title" data-i18n="Servicios profesionales">Servicios <em>profesionales</em></h2>
   <div class="services-grid">
     <div class="service-card" data-number="01">
       <div class="service-icon">📚</div>
@@ -751,16 +922,63 @@
     }
   };
 
+  const translations = {
+    en: {
+      'Servicios': 'Services',
+      'Especialidades': 'Specialties',
+      'Sobre mí': 'About',
+      'Proceso': 'Process',
+      'Solicitar presupuesto': 'Get a Quote',
+      'Lo que hago': 'What I Do',
+      'Servicios profesionales': 'Professional Services',
+      'Mis áreas': 'My Areas',
+      'Especialidades temáticas': 'Specializations',
+      'Cómo trabajo': 'How I Work',
+      'Un proceso transparente': 'A Transparent Process',
+      'Traductora & Correctora Certificada': 'Certified Translator & Proofreader',
+      'Educación': 'Education',
+      'Medicina': 'Medicine',
+      'Seguros': 'Insurance',
+      'Traducción Técnico-Científica y Literaria': 'Technical-Scientific and Literary Translation',
+      'Traducciones Públicas': 'Public Translations',
+      'Otros Campos': 'Other Fields',
+      'Medicina y Salud': 'Medicine and Health',
+      'Recursos Humanos': 'Human Resources',
+      'Ciencias Sociales & Periodismo': 'Social Sciences & Journalism',
+      'Seguridad & Manuales Técnicos': 'Security & Technical Manuals',
+      'Turismo & Hotelería': 'Tourism & Hospitality',
+      'Consulta inicial': 'Initial Consultation',
+      'Presupuesto & plazos': 'Quote & Deadlines',
+      'Traducción y revisión': 'Translation and Review',
+      'Entrega y ajustes': 'Delivery and Adjustments',
+      'Email': 'Email',
+      'Idiomas': 'Languages',
+      'Ubicación': 'Location',
+      'Certificación': 'Certification',
+      'Enviar consulta →': 'Send inquiry →',
+      'Hablemos': "Let's Talk",
+      'Solicitá tu presupuesto': 'Get Your Quote'
+    }
+  };
+
   function changeLanguage(lang) {
     localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
+
     if (lang === 'en') {
-      document.documentElement.lang = 'en';
-      alert('Translation feature coming soon! For now, you can use your browser\'s translation feature.');
-    } else {
-      document.documentElement.lang = 'es';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations.en[key]) {
+          el.innerHTML = translations.en[key];
+        }
+      });
+      alert('Página traducida a inglés');
     }
   }
 
   // Load saved language
   const savedLang = localStorage.getItem('language') || 'es';
   document.getElementById('langSelector').value = savedLang;
+  if (savedLang === 'en') {
+    changeLanguage('en');
+  }
