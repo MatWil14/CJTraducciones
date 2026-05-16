@@ -387,6 +387,176 @@
 </head>
 <body>
 
+<script>
+  // Language translations
+  const translations = {
+    en: {
+      'Servicios': 'Services',
+      'Especialidades': 'Specialties',
+      'Sobre mí': 'About',
+      'Proceso': 'Process',
+      'Solicitar presupuesto': 'Get a Quote',
+      'Lo que hago': 'What I Do',
+      'Servicios profesionales': 'Professional Services',
+      'Mis áreas': 'My Areas',
+      'Especialidades temáticas': 'Specializations',
+      'Cómo trabajo': 'How I Work',
+      'Un proceso transparente': 'A Transparent Process',
+      'Traductora & Correctora Certificada': 'Certified Translator & Proofreader',
+      'Educación': 'Education',
+      'Medicina': 'Medicine',
+      'Seguros': 'Insurance',
+      'Traducción Técnico-Científica y Literaria': 'Technical-Scientific and Literary Translation',
+      'Traducciones Públicas': 'Public Translations',
+      'Otros Campos': 'Other Fields',
+      'Medicina y Salud': 'Medicine and Health',
+      'Recursos Humanos': 'Human Resources',
+      'Ciencias Sociales & Periodismo': 'Social Sciences & Journalism',
+      'Seguridad & Manuales Técnicos': 'Security & Technical Manuals',
+      'Turismo & Hotelería': 'Tourism & Hospitality',
+      'Consulta inicial': 'Initial Consultation',
+      'Presupuesto & plazos': 'Quote & Deadlines',
+      'Traducción y revisión': 'Translation and Review',
+      'Entrega y ajustes': 'Delivery and Adjustments',
+      'Email': 'Email',
+      'Idiomas': 'Languages',
+      'Ubicación': 'Location',
+      'Certificación': 'Certification',
+      'Enviar consulta →': 'Send inquiry →',
+      'Hablemos': "Let's Talk",
+      'Solicitá tu presupuesto': 'Get Your Quote'
+    },
+    es: {
+      'Services': 'Servicios',
+      'Specialties': 'Especialidades',
+      'About': 'Sobre mí',
+      'Process': 'Proceso',
+      'Get a Quote': 'Solicitar presupuesto',
+      'What I Do': 'Lo que hago',
+      'Professional Services': 'Servicios profesionales',
+      'My Areas': 'Mis áreas',
+      'Specializations': 'Especialidades temáticas',
+      'How I Work': 'Cómo trabajo',
+      'A Transparent Process': 'Un proceso transparente',
+      'Certified Translator & Proofreader': 'Traductora & Correctora Certificada',
+      'Education': 'Educación',
+      'Medicine': 'Medicina',
+      'Insurance': 'Seguros',
+      'Technical-Scientific and Literary Translation': 'Traducción Técnico-Científica y Literaria',
+      'Public Translations': 'Traducciones Públicas',
+      'Other Fields': 'Otros Campos',
+      'Medicine and Health': 'Medicina y Salud',
+      'Human Resources': 'Recursos Humanos',
+      'Social Sciences & Journalism': 'Ciencias Sociales & Periodismo',
+      'Security & Technical Manuals': 'Seguridad & Manuales Técnicos',
+      'Tourism & Hospitality': 'Turismo & Hotelería',
+      'Initial Consultation': 'Consulta inicial',
+      'Quote & Deadlines': 'Presupuesto & plazos',
+      'Translation and Review': 'Traducción y revisión',
+      'Delivery and Adjustments': 'Entrega y ajustes',
+      "Let's Talk": 'Hablemos',
+      'Get Your Quote': 'Solicitá tu presupuesto'
+    }
+  };
+
+  function changeLanguage(lang) {
+    localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+
+      if (lang === 'en' && translations.en[key]) {
+        el.innerHTML = translations.en[key];
+      } else if (lang === 'es') {
+        el.innerHTML = key;
+      }
+    });
+  }
+
+  function toggleNav() {
+    const nav = document.getElementById('navLinks');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  function closeNav() {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  async function handleForm(e) {
+    e.preventDefault();
+
+    const btn = e.target.querySelector('button');
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const formData = {
+      access_key: 'PEGAR_AQUI_LA_KEY_DE_WEB3FORMS',
+      subject: document.getElementById('fasunto').value || 'Consulta desde cjtraducciones.com.ar',
+      from_name: document.getElementById('fname').value,
+      email: document.getElementById('femail').value,
+      message: document.getElementById('fmsg').value,
+      to: 'jusidcarolina@gmail.com'
+    };
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        btn.textContent = '✓ Consulta enviada';
+        btn.style.background = '#4a7c59';
+        e.target.reset();
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error(result.message || 'Error al enviar');
+      }
+    } catch (error) {
+      btn.textContent = '✗ Error, intenta de nuevo';
+      btn.style.background = '#b94a4a';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+      console.error('Error enviando formulario:', error);
+    }
+  }
+
+  // Load saved language
+  const savedLang = localStorage.getItem('language') || 'es';
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      const selector = document.getElementById('langSelector');
+      if (selector) selector.value = savedLang;
+      if (savedLang === 'en') {
+        changeLanguage('en');
+      }
+    });
+  } else {
+    const selector = document.getElementById('langSelector');
+    if (selector) selector.value = savedLang;
+    if (savedLang === 'en') {
+      changeLanguage('en');
+    }
+  }
+</script>
 
 <!-- NAV -->
 <nav>
@@ -738,97 +908,4 @@
   document.querySelectorAll('.service-card, .spec-item').forEach(el => {
     observer.observe(el);
   });
-
-  // Language translations
-  const translations = {
-    en: {
-      'Servicios': 'Services',
-      'Especialidades': 'Specialties',
-      'Sobre mí': 'About',
-      'Proceso': 'Process',
-      'Solicitar presupuesto': 'Get a Quote',
-      'Lo que hago': 'What I Do',
-      'Servicios profesionales': 'Professional Services',
-      'Mis áreas': 'My Areas',
-      'Especialidades temáticas': 'Specializations',
-      'Cómo trabajo': 'How I Work',
-      'Un proceso transparente': 'A Transparent Process',
-      'Traductora & Correctora Certificada': 'Certified Translator & Proofreader',
-      'Educación': 'Education',
-      'Medicina': 'Medicine',
-      'Seguros': 'Insurance',
-      'Traducción Técnico-Científica y Literaria': 'Technical-Scientific and Literary Translation',
-      'Traducciones Públicas': 'Public Translations',
-      'Otros Campos': 'Other Fields',
-      'Medicina y Salud': 'Medicine and Health',
-      'Recursos Humanos': 'Human Resources',
-      'Ciencias Sociales & Periodismo': 'Social Sciences & Journalism',
-      'Seguridad & Manuales Técnicos': 'Security & Technical Manuals',
-      'Turismo & Hotelería': 'Tourism & Hospitality',
-      'Consulta inicial': 'Initial Consultation',
-      'Presupuesto & plazos': 'Quote & Deadlines',
-      'Traducción y revisión': 'Translation and Review',
-      'Entrega y ajustes': 'Delivery and Adjustments',
-      'Email': 'Email',
-      'Idiomas': 'Languages',
-      'Ubicación': 'Location',
-      'Certificación': 'Certification',
-      'Enviar consulta →': 'Send inquiry →',
-      'Hablemos': "Let's Talk",
-      'Solicitá tu presupuesto': 'Get Your Quote'
-    },
-    es: {
-      'Services': 'Servicios',
-      'Specialties': 'Especialidades',
-      'About': 'Sobre mí',
-      'Process': 'Proceso',
-      'Get a Quote': 'Solicitar presupuesto',
-      'What I Do': 'Lo que hago',
-      'Professional Services': 'Servicios profesionales',
-      'My Areas': 'Mis áreas',
-      'Specializations': 'Especialidades temáticas',
-      'How I Work': 'Cómo trabajo',
-      'A Transparent Process': 'Un proceso transparente',
-      'Certified Translator & Proofreader': 'Traductora & Correctora Certificada',
-      'Education': 'Educación',
-      'Medicine': 'Medicina',
-      'Insurance': 'Seguros',
-      'Technical-Scientific and Literary Translation': 'Traducción Técnico-Científica y Literaria',
-      'Public Translations': 'Traducciones Públicas',
-      'Other Fields': 'Otros Campos',
-      'Medicine and Health': 'Medicina y Salud',
-      'Human Resources': 'Recursos Humanos',
-      'Social Sciences & Journalism': 'Ciencias Sociales & Periodismo',
-      'Security & Technical Manuals': 'Seguridad & Manuales Técnicos',
-      'Tourism & Hospitality': 'Turismo & Hotelería',
-      'Initial Consultation': 'Consulta inicial',
-      'Quote & Deadlines': 'Presupuesto & plazos',
-      'Translation and Review': 'Traducción y revisión',
-      'Delivery and Adjustments': 'Entrega y ajustes',
-      "Let's Talk": 'Hablemos',
-      'Get Your Quote': 'Solicitá tu presupuesto'
-    }
-  };
-
-  function changeLanguage(lang) {
-    localStorage.setItem('language', lang);
-    document.documentElement.lang = lang;
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-
-      if (lang === 'en' && translations.en[key]) {
-        el.innerHTML = translations.en[key];
-      } else if (lang === 'es') {
-        el.innerHTML = key;
-      }
-    });
-  }
-
-  // Load saved language
-  const savedLang = localStorage.getItem('language') || 'es';
-  document.getElementById('langSelector').value = savedLang;
-  if (savedLang === 'en') {
-    changeLanguage('en');
-  }
 
