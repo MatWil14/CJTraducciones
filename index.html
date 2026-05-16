@@ -387,176 +387,6 @@
 </head>
 <body>
 
-<script>
-const translations = {
-  'Traductora & Correctora Certificada': 'Certified Translator & Proofreader',
-  'Palabras que cruzan fronteras sin perder sentido': 'Words that cross borders without losing meaning',
-  'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.': 'Public, technical-scientific and literary translations from English ↔ Spanish backed by over 20 years of experience and official certification in Argentina.',
-  'Solicitar presupuesto': 'Get a Quote',
-  'Ver servicios': 'View Services',
-  'años de experiencia': 'years of experience',
-  'Años en la industria': 'Years in the industry',
-  'Idiomas · Inglés & Español': 'Languages · English & Spanish',
-  'Áreas de especialización': 'Specialization areas',
-  'Lo que hago': 'What I Do',
-  'Servicios profesionales': 'Professional Services',
-  'Educación': 'Education',
-  'Libros de texto, materiales didácticos, certificaciones y libros infantiles.': 'Textbooks, teaching materials, certifications and children\'s books.',
-  'Medicina': 'Medicine',
-  'Informes clínicos, estudios médicos, guías nutricionales y farmacología.': 'Clinical reports, medical studies, nutritional guides and pharmacology.',
-  'Seguros': 'Insurance',
-  'Pólizas, contratos, manuales de procedimientos y documentación legal.': 'Policies, contracts, procedure manuals and legal documentation.',
-  'Traducción Técnico-Científica y Literaria': 'Technical-Scientific and Literary Translation',
-  'Investigación, artículos científicos y obras literarias.': 'Research, scientific articles and literary works.',
-  'Traducciones Públicas': 'Public Translations',
-  'Documentos oficiales, partidas, certificados con legalización y Apostilla con firma ológrafa y digital': 'Official documents, certificates, legalization and Apostille with holographic and digital signature',
-  'Otros Campos': 'Other Fields',
-  'Ciencias Sociales, Periodismo, Manuales Técnicos, Seguridad, Turismo.': 'Social Sciences, Journalism, Technical Manuals, Security, Tourism.',
-  'Mis áreas': 'My Areas',
-  'Especialidades temáticas': 'Specializations',
-  'Medicina y Salud': 'Medicine and Health',
-  'Informes clínicos, ensayos, guías nutricionales': 'Clinical reports, essays, nutritional guides',
-  'Materiales didácticos, libros infantiles, programas': 'Teaching materials, children\'s books, programs',
-  'Pólizas, cláusulas, manuales de cobertura': 'Policies, clauses, coverage manuals',
-  'Recursos Humanos': 'Human Resources',
-  'Manuales de empleados, políticas corporativas': 'Employee manuals, corporate policies',
-  'Ciencias Sociales & Periodismo': 'Social Sciences & Journalism',
-  'Investigación, artículos, reportajes': 'Research, articles, reports',
-  'Seguridad & Manuales Técnicos': 'Security & Technical Manuals',
-  'Procedimientos, equipos, normas de seguridad': 'Procedures, equipment, safety standards',
-  'Turismo & Hotelería': 'Tourism & Hospitality',
-  'Guías de viaje, materiales de alojamiento': 'Travel guides, accommodation materials',
-  'Sobre mí': 'About',
-  'Carolina Jusid': 'Carolina Jusid',
-  'Certificación oficial': 'Official Certification',
-  'Traductora matriculada en el Colegio de Traductores Públicos de la Ciudad de Buenos Aires.': 'Certified translator registered with the College of Public Translators of the City of Buenos Aires.',
-  'Soy Carolina Jusid, traductora y correctora certificada con más de 20 años de trayectoria en el mercado de la traducción profesional inglés-español.': 'I am Carolina Jusid, a certified translator and proofreader with over 20 years of experience in the professional English-Spanish translation market.',
-  'Desde 2005 dirijo CJTraducciones, que ofrece servicios de traducción y corrección a clientes en Argentina y en el exterior.': 'Since 2005 I have directed CJTraducciones, which offers translation and proofreading services to clients in Argentina and abroad.',
-  'A lo largo de mi carrera he trabajado con una enorme variedad de textos: desde manuales de empleados y guías nutricionales hasta libros infantiles y procedimientos de seguridad industrial. Esta diversidad me ha dado una flexibilidad y precisión que va más allá de la especialidad.': 'Throughout my career I have worked with a huge variety of texts: from employee manuals and nutritional guides to children\'s books and industrial safety procedures. This diversity has given me a flexibility and precision that goes beyond specialization.',
-  'Mi enfoque siempre es el mismo: entregarle al cliente un texto que lea como si hubiera sido escrito originalmente en el idioma de destino, sin perder ni una pizca del sentido original.': 'My approach is always the same: to deliver to the client a text that reads as if it had been originally written in the target language, without losing a bit of the original meaning.',
-  'Cuento con más de 500 contactos profesionales en la industria y referencias de colegas reconocidos del sector.': 'I have over 500 professional contacts in the industry and references from recognized colleagues in the field.',
-  'Cómo trabajo': 'How I Work',
-  'Un proceso transparente': 'A Transparent Process',
-  'Consulta inicial': 'Initial Consultation',
-  'Me enviás el documento o describís tu proyecto. Analizo el material, el par de idiomas y el uso final.': 'You send me the document or describe your project. I analyze the material, the language pair and the final use.',
-  'Presupuesto & plazos': 'Quote & Deadlines',
-  'Te entrego un presupuesto claro y un plazo de entrega realista. Sin costos ocultos.': 'I provide you with a clear quote and a realistic delivery deadline. No hidden costs.',
-  'Traducción y revisión': 'Translation and Review',
-  'Traduzco, reviso y corrijo el texto. Verifico terminología, coherencia y registro antes de enviarte nada.': 'I translate, review and proofread the text. I verify terminology, consistency and tone before sending anything to you.',
-  'Entrega y ajustes': 'Delivery and Adjustments',
-  'Recibís el trabajo finalizado. Si necesitás algún ajuste puntual, lo atendemos con rapidez.': 'You receive the finished work. If you need any specific adjustments, we handle them quickly.',
-  'Hablemos': "Let's Talk",
-  'Solicitá tu presupuesto': 'Get Your Quote',
-  'Email': 'Email',
-  'Idiomas': 'Languages',
-  'Inglés ↔ Español': 'English ↔ Spanish',
-  'Ubicación': 'Location',
-  'Buenos Aires, Argentina · Servicios remotos a nivel global': 'Buenos Aires, Argentina · Remote services worldwide',
-  'Certificación': 'Certification',
-  'Colegio de Traductores Públicos de la Ciudad de Buenos Aires': 'College of Public Translators of the City of Buenos Aires',
-  'Tu nombre': 'Your name',
-  'Tu email': 'Your email',
-  'Asunto / Tipo de documento': 'Subject / Document type',
-  'Contame sobre tu proyecto...': 'Tell me about your project...',
-  'Enviar consulta →': 'Send inquiry →',
-  'CJTraducciones': 'CJTraducciones',
-  'Traductora y Correctora Certificada': 'Certified Translator and Proofreader',
-  'Especialidades': 'Specialties',
-  'Proceso': 'Process',
-  'Servicios': 'Services',
-  'profesionales': 'Professional',
-  'temáticas': 'Specializations',
-  'transparente': 'Transparent',
-  '© 2025': '© 2025',
-  'más de 20 años de trayectoria': 'over 20 years of experience',
-  'más de 500 contactos profesionales': 'over 500 professional contacts',
-  'Soy Carolina Jusid, traductora y correctora certificada con': 'I am Carolina Jusid, a certified translator and proofreader with',
-  'más de 20 años de trayectoria': 'over 20 years of experience',
-  'en el mercado de la traducción profesional inglés-español.': 'in the professional English-Spanish translation market.',
-  'Desde 2005 dirijo': 'Since 2005 I have directed',
-  'que ofrece servicios de traducción y corrección a clientes en Argentina y en el exterior.': 'which offers translation and proofreading services to clients in Argentina and abroad.',
-  'A lo largo de mi carrera he trabajado con una enorme variedad de textos: desde': 'Throughout my career I have worked with a huge variety of texts: from',
-  'manuales de empleados y guías nutricionales': 'employee manuals and nutritional guides',
-  'hasta': 'to',
-  'libros infantiles y procedimientos de seguridad industrial': 'children\'s books and industrial safety procedures',
-  'Esta diversidad me ha dado una flexibilidad y precisión que va más allá de la especialidad.': 'This diversity has given me a flexibility and precision that goes beyond specialization.',
-  'Cuento con': 'I have',
-  'en la industria y referencias de colegas reconocidos del sector.': 'in the industry and references from recognized colleagues in the field.',
-  'Me enviás el documento o describís tu proyecto. Analizo el material, el par de idiomas y el uso final.': 'You send me the document or describe your project. I analyze the material, the language pair and the final use.',
-  'Te entrego un presupuesto claro y un plazo de entrega realista. Sin costos ocultos.': 'I provide you with a clear quote and a realistic delivery deadline. No hidden costs.',
-  'Traduzco, reviso y corrijo el texto. Verifico terminología, coherencia y registro antes de enviarte nada.': 'I translate, review and proofread the text. I verify terminology, consistency and tone before sending anything to you.',
-  'Recibís el trabajo finalizado. Si necesitás algún ajuste puntual, lo atendemos con rapidez.': 'You receive the finished work. If you need any specific adjustments, we handle them quickly.',
-  'Cómo trabajo': 'How I Work',
-  'Me enviás': 'You send me',
-  'describís': 'describe',
-  'Analizo': 'I analyze',
-  'Te entrego': 'I provide you with',
-  'Sin costos ocultos.': 'No hidden costs.',
-  'Traduzco,': 'I translate,',
-  'Verifico': 'I verify',
-  'Recibís': 'You receive',
-  'Si necesitás': 'If you need',
-  'lo atendemos': 'we handle',
-  'Palabras que': 'Words that',
-  'cruzan': 'cross',
-  'fronteras': 'borders',
-  'sin perder sentido': 'without losing meaning',
-  'Un proceso': 'A',
-  'transparente': 'Transparent Process',
-  'Solicitá tu': 'Get Your',
-  'presupuesto': 'Quote'
-};
-
-function translatePage() {
-  const orderedKeys = Object.keys(translations).sort((a, b) => b.length - a.length);
-
-  // Traducir nodos de texto
-  for (const key of orderedKeys) {
-    const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-    const value = translations[key];
-
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    const nodes = [];
-    let node;
-
-    while (node = walker.nextNode()) {
-      if (node.textContent.includes(key)) {
-        nodes.push(node);
-      }
-    }
-
-    nodes.forEach(textNode => {
-      textNode.textContent = textNode.textContent.replace(regex, value);
-    });
-  }
-
-  // Traducir atributos
-  const allElements = document.querySelectorAll('*');
-  allElements.forEach(el => {
-    const attrs = ['placeholder', 'title', 'alt', 'aria-label'];
-    attrs.forEach(attr => {
-      if (el.hasAttribute(attr)) {
-        let val = el.getAttribute(attr);
-        for (const key of orderedKeys) {
-          const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-          val = val.replace(regex, translations[key]);
-        }
-        el.setAttribute(attr, val);
-      }
-    });
-  });
-}
-
-function changeLanguage(lang) {
-  localStorage.setItem('language', lang);
-  document.documentElement.lang = lang;
-  if (lang === 'en') {
-    translatePage();
-  } else {
-    location.reload();
-  }
-}
-</script>
 
 <!-- NAV -->
 <nav>
@@ -582,7 +412,7 @@ function changeLanguage(lang) {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-tag">Traductora &amp; Correctora Certificada</div>
+    <div class="hero-tag" data-i18n="Traductora & Correctora Certificada">Traductora &amp; Correctora Certificada</div>
     <h1 class="hero-title">
       Palabras que<br>cruzan <em>fronteras</em><br>sin perder sentido
     </h1>
@@ -590,7 +420,7 @@ function changeLanguage(lang) {
       Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.
     </p>
     <div class="hero-actions">
-      <a href="#contacto" class="btn-primary">Solicitar presupuesto</a>
+      <a href="#contacto" class="btn-primary" data-i18n="Solicitar presupuesto">Solicitar presupuesto</a>
       <a href="#servicios" class="btn-secondary">Ver servicios</a>
     </div>
   </div>
@@ -627,36 +457,36 @@ function changeLanguage(lang) {
 <!-- SERVICES -->
 <section class="services" id="servicios">
   <div class="section-tag" data-i18n="Lo que hago">Lo que hago</div>
-  <h2 class="section-title" data-i18n="Servicios profesionales">Servicios <em>profesionales</em></h2>
+  <h2 class="section-title">Servicios <em data-i18n="profesionales">profesionales</em></h2>
   <div class="services-grid">
     <div class="service-card" data-number="01">
       <div class="service-icon">📚</div>
-      <h3 class="service-name">Educación</h3>
+      <h3 class="service-name" data-i18n="Educación">Educación</h3>
       <p class="service-desc">Libros de texto, materiales didácticos, certificaciones y libros infantiles.</p>
     </div>
     <div class="service-card" data-number="02">
       <div class="service-icon">🩺</div>
-      <h3 class="service-name">Medicina</h3>
+      <h3 class="service-name" data-i18n="Medicina">Medicina</h3>
       <p class="service-desc">Informes clínicos, estudios médicos, guías nutricionales y farmacología.</p>
     </div>
     <div class="service-card" data-number="03">
       <div class="service-icon">🛡️</div>
-      <h3 class="service-name">Seguros</h3>
+      <h3 class="service-name" data-i18n="Seguros">Seguros</h3>
       <p class="service-desc">Pólizas, contratos, manuales de procedimientos y documentación legal.</p>
     </div>
     <div class="service-card" data-number="04">
       <div class="service-icon">🔬</div>
-      <h3 class="service-name">Traducción Técnico-Científica y Literaria</h3>
+      <h3 class="service-name" data-i18n="Traducción Técnico-Científica y Literaria">Traducción Técnico-Científica y Literaria</h3>
       <p class="service-desc">Investigación, artículos científicos y obras literarias.</p>
     </div>
     <div class="service-card" data-number="05">
       <div class="service-icon">📜</div>
-      <h3 class="service-name">Traducciones Públicas</h3>
+      <h3 class="service-name" data-i18n="Traducciones Públicas">Traducciones Públicas</h3>
       <p class="service-desc">Documentos oficiales, partidas, certificados con legalización y Apostilla con firma ológrafa y digital</p>
     </div>
     <div class="service-card" data-number="06">
       <div class="service-icon">🌐</div>
-      <h3 class="service-name">Otros Campos</h3>
+      <h3 class="service-name" data-i18n="Otros Campos">Otros Campos</h3>
       <p class="service-desc">Ciencias Sociales, Periodismo, Manuales Técnicos, Seguridad, Turismo.</p>
     </div>
   </div>
@@ -666,55 +496,55 @@ function changeLanguage(lang) {
 <section id="especialidades">
   <div class="specialties-inner">
     <div>
-      <div class="section-tag">Mis áreas</div>
-      <h2 class="section-title">Especialidades<br><em>temáticas</em></h2>
+      <div class="section-tag" data-i18n="Mis áreas">Mis áreas</div>
+      <h2 class="section-title">Especialidades<br><em data-i18n="Especialidades temáticas">temáticas</em></h2>
       <div class="spec-list">
         <div class="spec-item">
           <div class="spec-icon">🏥</div>
           <div>
-            <div class="spec-name">Medicina y Salud</div>
+            <div class="spec-name" data-i18n="Medicina y Salud">Medicina y Salud</div>
             <div class="spec-note">Informes clínicos, ensayos, guías nutricionales</div>
           </div>
         </div>
         <div class="spec-item">
           <div class="spec-icon">📚</div>
           <div>
-            <div class="spec-name">Educación</div>
+            <div class="spec-name" data-i18n="Educación">Educación</div>
             <div class="spec-note">Materiales didácticos, libros infantiles, programas</div>
           </div>
         </div>
         <div class="spec-item">
           <div class="spec-icon">🛡️</div>
           <div>
-            <div class="spec-name">Seguros</div>
+            <div class="spec-name" data-i18n="Seguros">Seguros</div>
             <div class="spec-note">Pólizas, cláusulas, manuales de cobertura</div>
           </div>
         </div>
         <div class="spec-item">
           <div class="spec-icon">👥</div>
           <div>
-            <div class="spec-name">Recursos Humanos</div>
+            <div class="spec-name" data-i18n="Recursos Humanos">Recursos Humanos</div>
             <div class="spec-note">Manuales de empleados, políticas corporativas</div>
           </div>
         </div>
         <div class="spec-item">
           <div class="spec-icon">📰</div>
           <div>
-            <div class="spec-name">Ciencias Sociales &amp; Periodismo</div>
+            <div class="spec-name" data-i18n="Ciencias Sociales & Periodismo">Ciencias Sociales &amp; Periodismo</div>
             <div class="spec-note">Investigación, artículos, reportajes</div>
           </div>
         </div>
         <div class="spec-item">
           <div class="spec-icon">⚙️</div>
           <div>
-            <div class="spec-name">Seguridad &amp; Manuales Técnicos</div>
+            <div class="spec-name" data-i18n="Seguridad & Manuales Técnicos">Seguridad &amp; Manuales Técnicos</div>
             <div class="spec-note">Procedimientos, equipos, normas de seguridad</div>
           </div>
         </div>
         <div class="spec-item">
           <div class="spec-icon">✈️</div>
           <div>
-            <div class="spec-name">Turismo &amp; Hotelería</div>
+            <div class="spec-name" data-i18n="Turismo & Hotelería">Turismo &amp; Hotelería</div>
             <div class="spec-note">Guías de viaje, materiales de alojamiento</div>
           </div>
         </div>
@@ -733,7 +563,7 @@ function changeLanguage(lang) {
 <section class="about" id="sobre-mi">
   <div class="about-inner">
     <div class="about-sticky">
-      <div class="section-tag">Sobre mí</div>
+      <div class="section-tag" data-i18n="Sobre mí">Sobre mí</div>
       <h2 class="section-title">Carolina<br><em>Jusid</em></h2>
       <div class="cert-badge">
         <h4>Certificación oficial</h4>
@@ -752,27 +582,27 @@ function changeLanguage(lang) {
 
 <!-- PROCESS -->
 <section class="process" id="proceso">
-  <div class="section-tag">Cómo trabajo</div>
-  <h2 class="section-title">Un proceso <em>transparente</em></h2>
+  <div class="section-tag" data-i18n="Cómo trabajo">Cómo trabajo</div>
+  <h2 class="section-title">Un proceso <em data-i18n="Un proceso transparente">transparente</em></h2>
   <div class="process-steps">
     <div class="step">
       <div class="step-num">01</div>
-      <div class="step-title">Consulta inicial</div>
+      <div class="step-title" data-i18n="Consulta inicial">Consulta inicial</div>
       <p class="step-desc">Me enviás el documento o describís tu proyecto. Analizo el material, el par de idiomas y el uso final.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
-      <div class="step-title">Presupuesto &amp; plazos</div>
+      <div class="step-title" data-i18n="Presupuesto & plazos">Presupuesto &amp; plazos</div>
       <p class="step-desc">Te entrego un presupuesto claro y un plazo de entrega realista. Sin costos ocultos.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
-      <div class="step-title">Traducción y revisión</div>
+      <div class="step-title" data-i18n="Traducción y revisión">Traducción y revisión</div>
       <p class="step-desc">Traduzco, reviso y corrijo el texto. Verifico terminología, coherencia y registro antes de enviarte nada.</p>
     </div>
     <div class="step">
       <div class="step-num">04</div>
-      <div class="step-title">Entrega y ajustes</div>
+      <div class="step-title" data-i18n="Entrega y ajustes">Entrega y ajustes</div>
       <p class="step-desc">Recibís el trabajo finalizado. Si necesitás algún ajuste puntual, lo atendemos con rapidez.</p>
     </div>
   </div>
@@ -780,35 +610,35 @@ function changeLanguage(lang) {
 
 <!-- CONTACT -->
 <section class="contact" id="contacto">
-  <div class="section-tag">Hablemos</div>
-  <h2 class="section-title">Solicitá tu <em>presupuesto</em></h2>
+  <div class="section-tag" data-i18n="Hablemos">Hablemos</div>
+  <h2 class="section-title">Solicitá tu <em data-i18n="Solicitá tu presupuesto">presupuesto</em></h2>
   <div class="contact-inner">
     <div>
       <div class="contact-detail">
         <div class="contact-detail-icon">✉️</div>
         <div>
-          <h4>Email</h4>
+          <h4 data-i18n="Email">Email</h4>
           <a href="/cdn-cgi/l/email-protection#ef859a9c868b8c8e9d808386818eaf88828e8683c18c8082"><span class="__cf_email__" data-cfemail="107a656379747371627f7c797e7150777d71797c3e737f7d">[email&#160;protected]</span></a>
         </div>
       </div>
       <div class="contact-detail">
         <div class="contact-detail-icon">🌐</div>
         <div>
-          <h4>Idiomas</h4>
+          <h4 data-i18n="Idiomas">Idiomas</h4>
           <p>Inglés ↔ Español</p>
         </div>
       </div>
       <div class="contact-detail">
         <div class="contact-detail-icon">📍</div>
         <div>
-          <h4>Ubicación</h4>
+          <h4 data-i18n="Ubicación">Ubicación</h4>
           <p>Buenos Aires, Argentina · Servicios remotos a nivel global</p>
         </div>
       </div>
       <div class="contact-detail">
         <div class="contact-detail-icon">🏛️</div>
         <div>
-          <h4>Certificación</h4>
+          <h4 data-i18n="Certificación">Certificación</h4>
           <p>Colegio de Traductores Públicos de la Ciudad de Buenos Aires</p>
         </div>
       </div>
@@ -818,7 +648,7 @@ function changeLanguage(lang) {
       <input type="email" id="femail" placeholder="Tu email" required />
       <input type="text" id="fasunto" placeholder="Asunto / Tipo de documento" />
       <textarea rows="5" id="fmsg" placeholder="Contame sobre tu proyecto..."></textarea>
-      <button type="submit">Enviar consulta →</button>
+      <button type="submit" data-i18n="Enviar consulta →">Enviar consulta →</button>
     </form>
   </div>
 </section>
@@ -841,23 +671,58 @@ function changeLanguage(lang) {
     document.getElementById('hamburger').classList.remove('open');
   }
 
-  // Form handler - opens email client
-  function handleForm(e) {
+  // Form handler - Web3Forms
+  async function handleForm(e) {
     e.preventDefault();
-    const nombre = document.getElementById('fname').value;
-    const email = document.getElementById('femail').value;
-    const asunto = document.getElementById('fasunto').value || 'Consulta de traducción';
-    const msg = document.getElementById('fmsg').value;
-    const body = encodeURIComponent('Nombre: ' + nombre + '\nEmail: ' + email + '\n\n' + msg);
-    const subject = encodeURIComponent(asunto);
-    window.location.href = 'mailto:jusidcarolina@gmail.com?subject=' + subject + '&body=' + body;
+
     const btn = e.target.querySelector('button');
-    btn.textContent = '✓ Abriendo correo...';
-    btn.style.background = '#4a7c59';
-    setTimeout(() => {
-      btn.textContent = 'Enviar consulta →';
-      btn.style.background = '';
-    }, 3000);
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const formData = {
+      access_key: 'PEGAR_AQUI_LA_KEY_DE_WEB3FORMS',
+      subject: document.getElementById('fasunto').value || 'Consulta desde cjtraducciones.com.ar',
+      from_name: document.getElementById('fname').value,
+      email: document.getElementById('femail').value,
+      message: document.getElementById('fmsg').value,
+      to: 'jusidcarolina@gmail.com'
+    };
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        btn.textContent = '✓ Consulta enviada';
+        btn.style.background = '#4a7c59';
+        e.target.reset();
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error(result.message || 'Error al enviar');
+      }
+    } catch (error) {
+      btn.textContent = '✗ Error, intenta de nuevo';
+      btn.style.background = '#b94a4a';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+      console.error('Error enviando formulario:', error);
+    }
   }
 
   // Scroll reveal
@@ -875,53 +740,6 @@ function changeLanguage(lang) {
   });
 
   // Language translations
-  const translations = {
-    es: {
-      servicios: 'Servicios',
-      especialidades: 'Especialidades',
-      sobremí: 'Sobre mí',
-      proceso: 'Proceso',
-      presupuesto: 'Solicitar presupuesto',
-      hablemos: 'Hablemos',
-      solicitaPresupuesto: 'Solicitá tu presupuesto',
-      loQuehago: 'Lo que hago',
-      profesionales: 'profesionales',
-      misAreas: 'Mis áreas',
-      temáticas: 'temáticas',
-      comoTrabajo: 'Cómo trabajo',
-      transparente: 'transparente',
-      cmoTrabajo2: 'Un proceso',
-      certificada: 'Traductora & Correctora Certificada',
-      palabras: 'Palabras que cruzan fronteras sin perder sentido',
-      traducciones: 'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.',
-      anosIndustria: 'Años en la industria',
-      idiomas: 'Idiomas · Inglés & Español',
-      areas: 'Áreas de especialización'
-    },
-    en: {
-      servicios: 'Services',
-      especialidades: 'Specialties',
-      sobremí: 'About',
-      proceso: 'Process',
-      presupuesto: 'Get a Quote',
-      hablemos: 'Let\'s Talk',
-      solicitaPresupuesto: 'Get Your Quote',
-      loQuehago: 'What I Do',
-      profesionales: 'Professional',
-      misAreas: 'My Areas',
-      temáticas: 'Specializations',
-      comoTrabajo: 'How I Work',
-      transparente: 'Transparent',
-      cmoTrabajo2: 'A',
-      certificada: 'Certified Translator & Proofreader',
-      palabras: 'Words that cross borders without losing meaning',
-      traducciones: 'Public, technical-scientific and literary translations from English ↔ Spanish backed by over 20 years of experience and official certification in Argentina.',
-      anosIndustria: 'Years in the industry',
-      idiomas: 'Languages · English & Spanish',
-      areas: 'Specialization areas'
-    }
-  };
-
   const translations = {
     en: {
       'Servicios': 'Services',
@@ -958,6 +776,37 @@ function changeLanguage(lang) {
       'Enviar consulta →': 'Send inquiry →',
       'Hablemos': "Let's Talk",
       'Solicitá tu presupuesto': 'Get Your Quote'
+    },
+    es: {
+      'Services': 'Servicios',
+      'Specialties': 'Especialidades',
+      'About': 'Sobre mí',
+      'Process': 'Proceso',
+      'Get a Quote': 'Solicitar presupuesto',
+      'What I Do': 'Lo que hago',
+      'Professional Services': 'Servicios profesionales',
+      'My Areas': 'Mis áreas',
+      'Specializations': 'Especialidades temáticas',
+      'How I Work': 'Cómo trabajo',
+      'A Transparent Process': 'Un proceso transparente',
+      'Certified Translator & Proofreader': 'Traductora & Correctora Certificada',
+      'Education': 'Educación',
+      'Medicine': 'Medicina',
+      'Insurance': 'Seguros',
+      'Technical-Scientific and Literary Translation': 'Traducción Técnico-Científica y Literaria',
+      'Public Translations': 'Traducciones Públicas',
+      'Other Fields': 'Otros Campos',
+      'Medicine and Health': 'Medicina y Salud',
+      'Human Resources': 'Recursos Humanos',
+      'Social Sciences & Journalism': 'Ciencias Sociales & Periodismo',
+      'Security & Technical Manuals': 'Seguridad & Manuales Técnicos',
+      'Tourism & Hospitality': 'Turismo & Hotelería',
+      'Initial Consultation': 'Consulta inicial',
+      'Quote & Deadlines': 'Presupuesto & plazos',
+      'Translation and Review': 'Traducción y revisión',
+      'Delivery and Adjustments': 'Entrega y ajustes',
+      "Let's Talk": 'Hablemos',
+      'Get Your Quote': 'Solicitá tu presupuesto'
     }
   };
 
@@ -965,15 +814,15 @@ function changeLanguage(lang) {
     localStorage.setItem('language', lang);
     document.documentElement.lang = lang;
 
-    if (lang === 'en') {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations.en[key]) {
-          el.innerHTML = translations.en[key];
-        }
-      });
-      alert('Página traducida a inglés');
-    }
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+
+      if (lang === 'en' && translations.en[key]) {
+        el.innerHTML = translations.en[key];
+      } else if (lang === 'es') {
+        el.innerHTML = key;
+      }
+    });
   }
 
   // Load saved language
