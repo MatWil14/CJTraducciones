@@ -13,7 +13,8 @@
       "Bash(curl -s \"https://cj-traducciones.vercel.app/\")",
       "Bash(git commit *)",
       "Bash(grep -v '^[0-9+]*$')",
-      "Bash(grep -v '^$')"
+      "Bash(grep -v '^$')",
+      "mcp__ide__getDiagnostics"
     ]
   }
 }
