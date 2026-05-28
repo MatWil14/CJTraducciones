@@ -403,7 +403,7 @@
       'Especialidades temáticas': 'Specializations',
       'Cómo trabajo': 'How I Work',
       'Un proceso transparente': 'A <em>Transparent</em> Process',
-      'Traductora & Correctora Certificada': 'Certified Translator & Proofreader',
+      'Traductora & Correctora Certificada': 'English <> Spanish Sworn, Technical-Scientific and Literary Translations',
       'Educación': 'Education',
       'Medicina': 'Medicine',
       'Seguros': 'Insurance',
@@ -465,10 +465,12 @@
       'Asunto / Tipo de documento': 'Subject / Document type',
       'Contame sobre tu proyecto...': 'Tell me about your project...',
       'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.': 'Public, technical-scientific and literary translations from English ↔ Spanish backed by over 20 years of experience and official certification in Argentina.',
-      'Palabras que cruzan fronteras sin perder sentido': 'Words that cross borders without losing meaning',
+      'Palabras que cruzan fronteras sin perder sentido': 'Words that cross <em>borders</em> without losing meaning',
       'profesionales': 'Professional',
       'Traducciones Públicas, Técnico-Científicas y Literarias de inglés <> español': 'English <> Spanish Sworn,<br>Technical-Scientific and <em>Literary</em><br>Translations',
-      'En un mundo globalizado, la comunicación es la CLAVE del ÉXITO. Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en la Argentina.<br><br>Traducciones con firma ológrafa y digital legalizadas por el Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA).': 'In an increasingly globalized world, communication is the KEY to SUCCESS<br><br>English <> Spanish Sworn, technical-scientific and literary translations backed by over 20 years of experience and official certification in Argentina<br><br>Translations with holographic (handwritten) and digital signatures, certified by the Sworn Translators\' Association of the City of Buenos Aires (CTPCBA).',
+      'En un mundo globalizado, la comunicación es la CLAVE del ÉXITO': 'In an increasingly globalized world, communication is the KEY to SUCCESS',
+      'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en la Argentina.': 'English <> Spanish Sworn, technical-scientific and literary translations backed by over 20 years of experience and official certification in Argentina.',
+      'Traducciones con firma ológrafa y digital legalizadas por el Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA).': 'Translations with holographic (handwritten) and digital signatures, certified by the Sworn Translators\' Association of the City of Buenos Aires (CTPCBA).',
       'En un mundo globalizado, la comunicación es la CLAVE del ÉXITO. Las traducciones deben permitir una comunicación eficaz. Por lo tanto, las traducciones deben ser realizadas por traductores profesionales que cuenten con las habilidades técnicas e interculturales necesarias.': 'In a globalized world, communication is the KEY to SUCCESS. Translations should allow effective communication. That is why translations should be done by professional translators with the necessary technical and intercultural skills.',
       'Le ofrecemos:': 'We offer you:',
       'Alta calidad y habilidades técnicas basadas en varios años de experiencia y capacitación constante.': 'Top quality and technical skills based on several years of experience and constant training',
@@ -487,9 +489,7 @@
       'Process': 'Proceso',
       'Get a Quote': 'Solicitar presupuesto',
       'What I Do': 'Lo que hago',
-      'Professional Services': 'Servicios profesionales',
       'My Areas': 'Mis áreas',
-      'Specializations': 'Especialidades temáticas',
       'How I Work': 'Cómo trabajo',
       'A Transparent Process': 'Un proceso transparente',
       'Certified Translator & Proofreader': 'Traductora & Correctora Certificada',
@@ -541,7 +541,7 @@
       'You receive the finished work. If you need any specific adjustments, we handle them quickly.': 'Recibís el trabajo finalizado. Si necesitás algún ajuste puntual, lo atendemos con rapidez.',
       'English ↔ Spanish': 'Inglés ↔ Español',
       'Buenos Aires, Argentina · Remote services worldwide': 'Buenos Aires, Argentina · Servicios remotos a nivel global',
-      'College of Public Translators of the City of Buenos Aires': 'Colegio de Traductores Públicos de la Ciudad de Buenos Aires',
+      'Colegio de Traductores Públicos de la Ciudad de Buenos Aires': 'Sworn Translators\' Association of the City of Buenos Aires (CTPCBA)',
       'Your name': 'Tu nombre',
       'Your email': 'Tu email',
       'Subject / Document type': 'Asunto / Tipo de documento',
@@ -642,6 +642,14 @@
     }
   }
 
+  // Add English translations for new content
+  translations.en['Servicios de traducción'] = 'Translation <em>Services</em>';
+  translations.en['Áreas de especialización'] = 'Specialization <em>Areas</em>';
+  translations.en['Calidad, eficiencia y responsabilidad que marcan la diferencia'] = 'Quality, efficiency and responsibility that make a <em>difference</em>';
+  translations.en['Lo ayudamos a superar las barreras idiomáticas'] = 'We help you overcome <em>language barriers</em>';
+  translations.en['En un mundo globalizado, la comunicación es la CLAVE del ÉXITO'] = 'In an increasingly globalized world, communication is the KEY to SUCCESS';
+  translations.en['Solicitar presupuesto'] = 'Get a <em>Quote</em>';
+
   // Load saved language
   const savedLang = localStorage.getItem('language') || 'es';
   if (document.readyState === 'loading') {
@@ -667,7 +675,6 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="#servicios" onclick="closeNav()" data-i18n="Servicios">Servicios</a></li>
     <li><a href="#especialidades" onclick="closeNav()" data-i18n="Especialidades">Especialidades</a></li>
-    <li><a href="#proceso" onclick="closeNav()" data-i18n="Proceso">Proceso</a></li>
     <li><a href="#contacto" class="nav-cta" onclick="closeNav()" data-i18n="Solicitar presupuesto">Solicitar presupuesto</a></li>
     <li style="margin-left: auto;">
       <select id="langSelector" onchange="changeLanguage(this.value)" style="padding: 0.5rem; border: 1px solid var(--gold); background: var(--white); color: var(--ink); cursor: pointer; border-radius: 2px;">
@@ -684,16 +691,18 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-tag" data-i18n="Traductora & Correctora Certificada">Traductora &amp; Correctora Certificada</div>
-    <h1 class="hero-title" data-i18n="Traducciones Públicas, Técnico-Científicas y Literarias de inglés <> español">
-      Traducciones Públicas,<br>Técnico-Científicas y <em>Literarias</em><br>de inglés ↔ español
+    <div class="hero-tag" data-i18n="Traducciones Públicas, Técnico-Científicas y Literarias de inglés <> español">Traducciones Públicas, Técnico-Científicas y <em>Literarias</em> de inglés ↔ español</div>
+    <h1 class="hero-title" data-i18n="Palabras que cruzan fronteras sin perder sentido">
+      Palabras que cruzan <em>fronteras</em> sin perder sentido
     </h1>
-    <p class="hero-subtitle" data-i18n="Palabras que cruzan fronteras sin perder sentido">
-      Palabras que cruzan fronteras sin perder sentido
+    <p style="font-size: 1.35rem; font-weight: 500; line-height: 1.5; color: var(--ink); margin-top: 2rem; margin-bottom: 1.5rem;" data-i18n="En un mundo globalizado, la comunicación es la CLAVE del ÉXITO">En un mundo globalizado, la comunicación es la <strong>CLAVE del ÉXITO</strong></p>
+    <p class="hero-subtitle" data-i18n="Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en la Argentina.">
+      Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en la Argentina.
     </p>
-    <p class="hero-subtitle" style="margin-top: 1.2rem;" data-i18n="En un mundo globalizado, la comunicación es la CLAVE del ÉXITO. Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en la Argentina.<br><br>Traducciones con firma ológrafa y digital legalizadas por el Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA).">
-      En un mundo globalizado, la comunicación es la <strong>CLAVE del ÉXITO</strong>. Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en la Argentina.<br><br>Traducciones con firma ológrafa y digital legalizadas por el Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA).
+    <p class="hero-subtitle" data-i18n="Traducciones con firma ológrafa y digital legalizadas por el Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA).">
+      Traducciones con firma ológrafa y digital legalizadas por el Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA).
     </p>
+    <p style="font-size: 1.5rem; font-weight: 600; line-height: 1.7; color: var(--gold); margin-top: 3rem; text-align: center; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.03em;" data-i18n="Calidad, eficiencia y responsabilidad que marcan la diferencia">Calidad, eficiencia y responsabilidad que marcan la <em style="font-style: italic;">diferencia</em></p>
     <div class="hero-actions">
       <a href="#contacto" class="btn-primary" data-i18n="Solicitar presupuesto">Solicitar presupuesto</a>
       <a href="#servicios" class="btn-secondary" data-i18n="Ver servicios">Ver servicios</a>
@@ -731,8 +740,7 @@
 
 <!-- SERVICES -->
 <section class="services" id="servicios">
-  <div class="section-tag" data-i18n="Lo que hago">Lo que hago</div>
-  <h2 class="section-title" data-i18n="Servicios profesionales">Servicios <em>profesionales</em></h2>
+  <h2 class="section-title" data-i18n="Servicios de traducción">Servicios de <em>Traducción</em></h2>
   <p style="font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 800px; margin-bottom: 3rem;" data-i18n="En un mundo globalizado, la comunicación es la CLAVE del ÉXITO. Las traducciones deben permitir una comunicación eficaz. Por lo tanto, las traducciones deben ser realizadas por traductores profesionales que cuenten con las habilidades técnicas e interculturales necesarias.">
     En un mundo globalizado, la comunicación es la <strong>CLAVE del ÉXITO</strong>. Las traducciones deben permitir una comunicación eficaz. Por lo tanto, las traducciones deben ser realizadas por traductores profesionales que cuenten con las habilidades técnicas e interculturales necesarias.
   </p>
@@ -746,47 +754,14 @@
   </ul>
   <p style="font-size: 0.95rem; color: var(--muted); max-width: 800px; margin-bottom: 1rem;" data-i18n="Coordinación: Carolina Jusid"><strong>Coordinación:</strong> Carolina Jusid</p>
   <p style="font-size: 0.95rem; color: var(--muted); max-width: 800px; margin-bottom: 3.5rem;"><a href="https://www.linkedin.com/in/carolinajusid/" target="_blank" style="color: var(--gold); text-decoration: none;">https://www.linkedin.com/in/carolinajusid/</a></p>
-  <p style="font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 800px; margin-bottom: 3.5rem; font-style: italic;" data-i18n="Lo ayudamos a superar las barreras idiomáticas">Lo ayudamos a superar las barreras idiomáticas</p>
-  <div class="services-grid">
-    <div class="service-card" data-number="01">
-      <div class="service-icon">📚</div>
-      <h3 class="service-name" data-i18n="Educación">Educación</h3>
-      <p class="service-desc" data-i18n="Libros de texto, materiales didácticos, certificaciones y libros infantiles.">Libros de texto, materiales didácticos, certificaciones y libros infantiles.</p>
-    </div>
-    <div class="service-card" data-number="02">
-      <div class="service-icon">🩺</div>
-      <h3 class="service-name" data-i18n="Medicina">Medicina</h3>
-      <p class="service-desc" data-i18n="Informes clínicos, estudios médicos, guías nutricionales y farmacología.">Informes clínicos, estudios médicos, guías nutricionales y farmacología.</p>
-    </div>
-    <div class="service-card" data-number="03">
-      <div class="service-icon">🛡️</div>
-      <h3 class="service-name" data-i18n="Seguros">Seguros</h3>
-      <p class="service-desc" data-i18n="Pólizas, contratos, manuales de procedimientos y documentación legal.">Pólizas, contratos, manuales de procedimientos y documentación legal.</p>
-    </div>
-    <div class="service-card" data-number="04">
-      <div class="service-icon">🔬</div>
-      <h3 class="service-name" data-i18n="Traducción Técnico-Científica y Literaria">Traducción Técnico-Científica y Literaria</h3>
-      <p class="service-desc" data-i18n="Investigación, artículos científicos y obras literarias.">Investigación, artículos científicos y obras literarias.</p>
-    </div>
-    <div class="service-card" data-number="05">
-      <div class="service-icon">📜</div>
-      <h3 class="service-name" data-i18n="Traducciones Públicas">Traducciones Públicas</h3>
-      <p class="service-desc" data-i18n="Documentos oficiales, partidas, certificados con legalización y Apostilla con firma ológrafa y digital">Documentos oficiales, partidas, certificados con legalización y Apostilla con firma ológrafa y digital</p>
-    </div>
-    <div class="service-card" data-number="06">
-      <div class="service-icon">🌐</div>
-      <h3 class="service-name" data-i18n="Otros Campos">Otros Campos</h3>
-      <p class="service-desc" data-i18n="Ciencias Sociales, Periodismo, Manuales Técnicos, Seguridad, Turismo.">Ciencias Sociales, Periodismo, Manuales Técnicos, Seguridad, Turismo.</p>
-    </div>
-  </div>
+  <p style="font-size: 1.5rem; font-weight: 600; line-height: 1.7; color: var(--gold); margin-top: 3.5rem; text-align: center; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.03em;" data-i18n="Lo ayudamos a superar las barreras idiomáticas">Lo ayudamos a superar las <em style="font-style: italic;">barreras idiomáticas</em></p>
 </section>
 
 <!-- SPECIALTIES -->
 <section id="especialidades">
   <div class="specialties-inner">
     <div>
-      <div class="section-tag" data-i18n="Mis áreas">Mis áreas</div>
-      <h2 class="section-title" data-i18n="Áreas de especialización">Áreas de <em>especialización</em></h2>
+      <h2 class="section-title" data-i18n="Áreas de especialización">Áreas de <em>Especialización</em></h2>
       <div class="spec-list">
         <div class="spec-item">
           <div class="spec-icon">🏥</div>
@@ -848,38 +823,10 @@
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process" id="proceso">
-  <div class="section-tag" data-i18n="Cómo trabajo">Cómo trabajo</div>
-  <h2 class="section-title" data-i18n="Un proceso transparente">Un proceso <em>transparente</em></h2>
-  <div class="process-steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-title" data-i18n="Consulta inicial">Consulta inicial</div>
-      <p class="step-desc" data-i18n="Me enviás el documento o describís tu proyecto. Analizo el material, el par de idiomas y el uso final.">Me enviás el documento o describís tu proyecto. Analizo el material, el par de idiomas y el uso final.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-title" data-i18n="Presupuesto & plazos">Presupuesto &amp; plazos</div>
-      <p class="step-desc" data-i18n="Te entrego un presupuesto claro y un plazo de entrega realista. Sin costos ocultos.">Te entrego un presupuesto claro y un plazo de entrega realista. Sin costos ocultos.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-title" data-i18n="Traducción y revisión">Traducción y revisión</div>
-      <p class="step-desc" data-i18n="Traduzco, reviso y corrijo el texto. Verifico terminología, coherencia y registro antes de enviarte nada.">Traduzco, reviso y corrijo el texto. Verifico terminología, coherencia y registro antes de enviarte nada.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-title" data-i18n="Entrega y ajustes">Entrega y ajustes</div>
-      <p class="step-desc" data-i18n="Recibís el trabajo finalizado. Si necesitás algún ajuste puntual, lo atendemos con rapidez.">Recibís el trabajo finalizado. Si necesitás algún ajuste puntual, lo atendemos con rapidez.</p>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section class="contact" id="contacto">
   <div class="section-tag" data-i18n="Hablemos">Hablemos</div>
-  <h2 class="section-title" data-i18n="Solicitá tu presupuesto">Solicitá tu <em>presupuesto</em></h2>
+  <h2 class="section-title" data-i18n="Solicitar presupuesto">Solicitar <em>presupuesto</em></h2>
   <div class="contact-inner">
     <div>
       <div class="contact-detail">
