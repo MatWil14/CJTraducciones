@@ -14,7 +14,9 @@
       "Bash(git commit *)",
       "Bash(grep -v '^[0-9+]*$')",
       "Bash(grep -v '^$')",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(gh pr *)",
+      "Bash(python *)"
     ]
   }
 }
