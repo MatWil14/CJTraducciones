@@ -81,16 +81,16 @@
     .hero-text { position: relative; z-index: 1; }
     .hero-tag {
       display: inline-block;
-      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold); border: 1px solid var(--gold-light);
+      font-size: 1.15rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink); border: 2px solid var(--gold-light);
       padding: .3rem .9rem; margin-bottom: 2rem;
-      animation: fadeUp .8s ease both;
+      animation: fadeUp .8s ease both; font-weight: 600;
     }
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-size: clamp(2rem, 3.2vw, 3.8rem);
       line-height: 1.06; font-weight: 300;
-      color: var(--ink);
+      color: var(--gold); font-style: italic;
       animation: fadeUp .8s .12s ease both;
     }
     .hero-title em { font-style: italic; color: var(--gold); }
@@ -128,7 +128,7 @@
       animation: fadeIn 1.2s .2s ease both;
     }
     .portrait-frame {
-      position: relative; width: 380px; height: 460px;
+      position: relative; width: 650px; height: 550px;
     }
     .portrait-frame::before {
       content: '';
@@ -142,6 +142,8 @@
       object-fit: cover;
       position: relative; z-index: 1;
       filter: sepia(10%) contrast(1.05);
+      border: 3px solid var(--gold);
+      box-shadow: 0 12px 40px rgba(184,151,90,0.4);
     }
     .portrait-badge {
       position: absolute; bottom: -16px; left: -16px; z-index: 2;
@@ -180,7 +182,7 @@
       font-size: clamp(2.2rem, 3.5vw, 3.2rem);
       font-weight: 300; line-height: 1.15; color: var(--ink);
     }
-    .section-title em { font-style: italic; color: var(--gold); }
+    .section-title em { color: var(--gold); }
 
     /* ── SERVICES ── */
     .services { background: var(--cream); }
@@ -392,6 +394,7 @@
   // Language translations
   const translations = {
     en: {
+      'Inicio': 'Home',
       'Servicios': 'Services',
       'Especialidades': 'Specialties',
       'Sobre mí': 'About',
@@ -420,6 +423,7 @@
       'Traducción y revisión': 'Translation and Review',
       'Entrega y ajustes': 'Delivery and Adjustments',
       'Email': 'Email',
+      'WhatsApp': 'WhatsApp',
       'Idiomas': 'Languages',
       'Ubicación': 'Location',
       'Certificación': 'Certification',
@@ -483,6 +487,7 @@
       'Áreas de especialización': 'Specialization Areas'
     },
     es: {
+      'Home': 'Inicio',
       'Services': 'Servicios',
       'Specialties': 'Especialidades',
       'About': 'Sobre mí',
@@ -647,7 +652,7 @@
   translations.en['Áreas de especialización'] = 'Specialization <em>Areas</em>';
   translations.en['Calidad, eficiencia y responsabilidad que marcan la diferencia'] = 'Quality, efficiency and responsibility that make a <em>difference</em>';
   translations.en['Lo ayudamos a superar las barreras idiomáticas'] = 'We help you overcome <em>language barriers</em>';
-  translations.en['En un mundo globalizado, la comunicación es la CLAVE del ÉXITO'] = 'In an increasingly globalized world, communication is the KEY to SUCCESS';
+  translations.en['En un mundo globalizado, la COMUNICACIÓN es la clave del ÉXITO'] = 'In an increasingly globalized world, COMMUNICATION is the key to SUCCESS';
   translations.en['Solicitar presupuesto'] = 'Get a <em>Quote</em>';
 
   // Load saved language
@@ -673,8 +678,9 @@
 <nav>
   <a href="#" class="nav-brand">CJ<span>Traducciones</span></a>
   <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="closeNav()" data-i18n="Inicio">Inicio</a></li>
     <li><a href="#servicios" onclick="closeNav()" data-i18n="Servicios">Servicios</a></li>
-    <li><a href="#especialidades" onclick="closeNav()" data-i18n="Especialidades">Especialidades</a></li>
+    <li><a href="#especialidades" onclick="closeNav()" data-i18n="Áreas de especialización">Áreas de especialización</a></li>
     <li><a href="#contacto" class="nav-cta" onclick="closeNav()" data-i18n="Solicitar presupuesto">Solicitar presupuesto</a></li>
     <li style="margin-left: auto;">
       <select id="langSelector" onchange="changeLanguage(this.value)" style="padding: 0.5rem; border: 1px solid var(--gold); background: var(--white); color: var(--ink); cursor: pointer; border-radius: 2px;">
@@ -691,33 +697,26 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-tag" data-i18n="Traducciones Públicas, Técnico-Científicas y Literarias de inglés <> español">Traducciones Públicas, Técnico-Científicas y <em>Literarias</em> de inglés ↔ español</div>
+    <div class="hero-tag" data-i18n="Traducciones Públicas, Técnico-Científicas y Literarias de inglés <> español">Traducciones Públicas, Técnico-Científicas y Literarias de inglés <> español</div>
     <h1 class="hero-title" data-i18n="Palabras que cruzan fronteras sin perder sentido">
       Palabras que cruzan <em>fronteras</em> sin perder sentido
     </h1>
-    <p style="font-size: 1.35rem; font-weight: 500; line-height: 1.5; color: var(--ink); margin-top: 2rem; margin-bottom: 1.5rem;" data-i18n="En un mundo globalizado, la comunicación es la CLAVE del ÉXITO">En un mundo globalizado, la comunicación es la <strong>CLAVE del ÉXITO</strong></p>
+    <p style="font-size: 1.35rem; font-weight: 500; line-height: 1.5; color: var(--ink); margin-top: 2rem; margin-bottom: 1.5rem;" data-i18n="En un mundo globalizado, la COMUNICACIÓN es la clave del ÉXITO">En un mundo globalizado, la <strong style="color: var(--gold);">COMUNICACIÓN</strong> es la clave del <strong style="color: var(--gold);">ÉXITO</strong></p>
     <p class="hero-subtitle" data-i18n="Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en la Argentina.">
       Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en la Argentina.
     </p>
     <p class="hero-subtitle" data-i18n="Traducciones con firma ológrafa y digital legalizadas por el Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA).">
       Traducciones con firma ológrafa y digital legalizadas por el Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA).
     </p>
-    <p style="font-size: 1.5rem; font-weight: 600; line-height: 1.7; color: var(--gold); margin-top: 3rem; text-align: center; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.03em;" data-i18n="Calidad, eficiencia y responsabilidad que marcan la diferencia">Calidad, eficiencia y responsabilidad que marcan la <em style="font-style: italic;">diferencia</em></p>
+    <p style="font-size: 2.2rem; font-weight: 600; line-height: 1.7; color: var(--ink); margin-top: 3rem; text-align: center; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.03em;" data-i18n="Calidad, eficiencia y responsabilidad que marcan la diferencia">Calidad, eficiencia y responsabilidad que marcan la <em style="font-style: italic;">diferencia</em></p>
     <div class="hero-actions">
-      <a href="#contacto" class="btn-primary" data-i18n="Solicitar presupuesto">Solicitar presupuesto</a>
+      <a href="#contacto" class="btn-secondary" data-i18n="Solicitar presupuesto">Solicitar presupuesto</a>
       <a href="#servicios" class="btn-secondary" data-i18n="Ver servicios">Ver servicios</a>
     </div>
   </div>
   <div class="hero-visual">
     <div class="portrait-frame">
-      <!-- Placeholder profesional ya que no se puede embeber la foto directamente -->
-      <div class="portrait-img" style="background: linear-gradient(160deg,#c9bca5 0%,#9e907a 100%); display:flex; align-items:center; justify-content:center;">
-        <span style="font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(253,251,247,0.5);font-style:italic;">CJ</span>
-      </div>
-      <div class="portrait-badge">
-        <strong>+20</strong>
-        <span data-i18n="años de experiencia">años de experiencia</span>
-      </div>
+      <img src="Gemini_Generated_Image_x036igx036igx036.png" alt="Carolina Jusid" class="portrait-img">
     </div>
   </div>
 </section>
@@ -741,10 +740,10 @@
 <!-- SERVICES -->
 <section class="services" id="servicios">
   <h2 class="section-title" data-i18n="Servicios de traducción">Servicios de <em>Traducción</em></h2>
-  <p style="font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 800px; margin-bottom: 3rem;" data-i18n="En un mundo globalizado, la comunicación es la CLAVE del ÉXITO. Las traducciones deben permitir una comunicación eficaz. Por lo tanto, las traducciones deben ser realizadas por traductores profesionales que cuenten con las habilidades técnicas e interculturales necesarias.">
-    En un mundo globalizado, la comunicación es la <strong>CLAVE del ÉXITO</strong>. Las traducciones deben permitir una comunicación eficaz. Por lo tanto, las traducciones deben ser realizadas por traductores profesionales que cuenten con las habilidades técnicas e interculturales necesarias.
+  <p style="font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 800px; margin-bottom: 3rem;" data-i18n="En un mundo globalizado, la COMUNICACIÓN es la clave del ÉXITO. Las traducciones deben permitir una comunicación eficaz. Por lo tanto, las traducciones deben ser realizadas por traductores profesionales que cuenten con las habilidades técnicas e interculturales necesarias.">
+    En un mundo globalizado, la <strong>COMUNICACIÓN</strong> es la clave del <strong>ÉXITO</strong>. Las traducciones deben permitir una comunicación eficaz. Por lo tanto, las traducciones deben ser realizadas por traductores profesionales que cuenten con las habilidades técnicas e interculturales necesarias.
   </p>
-  <p style="font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 800px; margin-bottom: 2rem;" data-i18n="Le ofrecemos:"><strong>Le ofrecemos:</strong></p>
+  <p style="font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 800px; margin-bottom: 0.5rem;" data-i18n="Le ofrecemos:"><strong>Le ofrecemos:</strong></p>
   <ul style="font-size: 0.95rem; line-height: 1.8; color: var(--muted); max-width: 800px; margin-bottom: 3.5rem; list-style: none; padding: 0;">
     <li style="margin-bottom: 0.8rem;" data-i18n="Alta calidad y habilidades técnicas basadas en varios años de experiencia y capacitación constante.">• Alta calidad y habilidades técnicas basadas en varios años de experiencia y capacitación constante.</li>
     <li style="margin-bottom: 0.8rem;" data-i18n="Compromiso para cumplir con las fechas de entrega y confiabilidad absoluta">• Compromiso para cumplir con las fechas de entrega y confiabilidad absoluta</li>
@@ -754,7 +753,7 @@
   </ul>
   <p style="font-size: 0.95rem; color: var(--muted); max-width: 800px; margin-bottom: 1rem;" data-i18n="Coordinación: Carolina Jusid"><strong>Coordinación:</strong> Carolina Jusid</p>
   <p style="font-size: 0.95rem; color: var(--muted); max-width: 800px; margin-bottom: 3.5rem;"><a href="https://www.linkedin.com/in/carolinajusid/" target="_blank" style="color: var(--gold); text-decoration: none;">https://www.linkedin.com/in/carolinajusid/</a></p>
-  <p style="font-size: 1.5rem; font-weight: 600; line-height: 1.7; color: var(--gold); margin-top: 3.5rem; text-align: center; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.03em;" data-i18n="Lo ayudamos a superar las barreras idiomáticas">Lo ayudamos a superar las <em style="font-style: italic;">barreras idiomáticas</em></p>
+  <p style="font-size: 2.2rem; font-weight: 600; line-height: 1.7; color: var(--gold); margin-top: 3.5rem; text-align: center; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.03em;" data-i18n="Lo ayudamos a superar las barreras idiomáticas">Lo ayudamos a superar las barreras idiomáticas</p>
 </section>
 
 <!-- SPECIALTIES -->
@@ -834,6 +833,13 @@
         <div>
           <h4 data-i18n="Email">Email</h4>
           <a href="mailto:jusidcarolina@gmail.com">jusidcarolina@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">💬</div>
+        <div>
+          <h4 data-i18n="WhatsApp">WhatsApp</h4>
+          <a href="https://wa.me/541154702414?text=Buenos%20dias%2C%20te%20escribo%20desde%20el%20sitio%20Web%20para%20hacerte%20una%20consulta%3A">+54 11 5470 2414</a>
         </div>
       </div>
       <div class="contact-detail">
