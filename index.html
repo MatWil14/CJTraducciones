@@ -399,7 +399,9 @@
       'Especialidades': 'Specialties',
       'Sobre mí': 'About',
       'Proceso': 'Process',
-      'Solicitar presupuesto': 'Get a <em>Quote</em>',
+      'Solicitar <em>presupuesto</em>': 'Get a <em>Quote</em>',
+      'Solicitar presupuesto': 'Get a Quote',
+      'Get a Quote': 'Solicitar presupuesto',
       'Lo que hago': 'What I Do',
       'Servicios profesionales': 'Professional <em>Services</em>',
       'Mis áreas': 'My Areas',
@@ -493,7 +495,6 @@
       'Specialties': 'Especialidades',
       'About': 'Sobre mí',
       'Process': 'Proceso',
-      'Get a Quote': 'Solicitar presupuesto',
       'What I Do': 'Lo que hago',
       'My Areas': 'Mis áreas',
       'How I Work': 'Cómo trabajo',
@@ -555,6 +556,7 @@
       'Public, technical-scientific and literary translations from English ↔ Spanish backed by over 20 years of experience and official certification in Argentina.': 'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.',
       'Words that cross borders without losing meaning': 'Palabras que cruzan fronteras sin perder sentido',
       'Professional': 'profesionales',
+      'Get a <em>Quote</em>': 'Solicitar <em>presupuesto</em>'
     }
   };
 
@@ -661,7 +663,8 @@
   translations.en['• Compromiso para cumplir con las fechas de entrega y confiabilidad absoluta'] = '• Commitment to meet deadlines and absolute reliability';
   translations.en['• Flexibilidad y manejo personalizado de sus proyectos'] = '• Flexibility and personalized management of your projects';
   translations.en['• Presupuestos sin cargo'] = '• Free quotes';
-  translations.en['Solicitar presupuesto'] = 'Get a <em>Quote</em>';
+  translations.en['Solicitar <em>presupuesto</em>'] = 'Get a <em>Quote</em>';
+  translations.en['Solicitar presupuesto'] = 'Get a Quote';
 
   // Load saved language
   const savedLang = localStorage.getItem('language') || 'es';
@@ -689,7 +692,7 @@
     <li><a href="#" onclick="closeNav()" data-i18n="Inicio">Inicio</a></li>
     <li><a href="#servicios" onclick="closeNav()" data-i18n="Servicios">Servicios</a></li>
     <li><a href="#especialidades" onclick="closeNav()" data-i18n="Áreas de especialización">Áreas de especialización</a></li>
-    <li><a href="#contacto" class="nav-cta" onclick="closeNav()" data-i18n="Solicitar presupuesto">Solicitar presupuesto</a></li>
+    <li><a href="#contacto" class="nav-cta" onclick="closeNav()" data-i18n="Get a Quote">Get a Quote</a></li>
     <li style="margin-left: auto;">
       <select id="langSelector" onchange="changeLanguage(this.value)" style="padding: 0.5rem; border: 1px solid var(--gold); background: var(--white); color: var(--ink); cursor: pointer; border-radius: 2px;">
         <option value="es">Español</option>
@@ -718,7 +721,7 @@
     </p>
     <p style="font-size: 2.2rem; font-weight: 600; line-height: 1.7; color: var(--ink); margin-top: 3rem; text-align: center; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.03em;" data-i18n="Calidad, eficiencia y responsabilidad que marcan la diferencia">Calidad, eficiencia y responsabilidad que marcan la <em style="font-style: italic;">diferencia</em></p>
     <div class="hero-actions">
-      <a href="#contacto" class="btn-secondary" data-i18n="Solicitar presupuesto">Solicitar presupuesto</a>
+      <a href="#contacto" class="btn-secondary" data-i18n="Get a Quote">Get a Quote</a>
       <a href="#servicios" class="btn-secondary" data-i18n="Ver servicios">Ver servicios</a>
     </div>
   </div>
@@ -833,7 +836,7 @@
 <!-- CONTACT -->
 <section class="contact" id="contacto">
   <div class="section-tag" data-i18n="Hablemos">Hablemos</div>
-  <h2 class="section-title" data-i18n="Solicitar presupuesto">Solicitar <em>presupuesto</em></h2>
+  <h2 class="section-title" data-i18n="Solicitar <em>presupuesto</em>">Solicitar <em>presupuesto</em></h2>
   <div class="contact-inner">
     <div>
       <div class="contact-detail">
