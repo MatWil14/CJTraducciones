@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Carolina Jusid | Traductora y Correctora Certificada Inglés ↔ Español</title>
+  <title>CJ Traducciones</title>
   <meta name="description" content="Carolina Jusid, traductora y correctora certificada inglés-español con más de 20 años de experiencia. Especializada en educación, medicina y seguros. Argentina."/>
   <meta name="keywords" content="traductora certificada, traducción inglés español, correctora, CJTraducciones, traducción médica, traducción educativa, Argentina"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,14 +51,14 @@
     .nav-links a {
       font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--muted);
-      text-decoration: none; transition: color .25s;
+      text-decoration: none; transition: color .25s; font-style: normal;
     }
     .nav-links a:hover { color: var(--gold); }
     .nav-cta {
       background: var(--gold); color: var(--white) !important;
       padding: .5rem 1.3rem; border-radius: 2px;
       font-weight: 500 !important; letter-spacing: 0.08em !important;
-      transition: background .25s !important;
+      transition: background .25s !important; font-style: normal;
     }
     .nav-cta:hover { background: var(--ink) !important; color: var(--gold-light) !important; }
 
@@ -90,7 +90,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 3.2vw, 3.8rem);
       line-height: 1.06; font-weight: 300;
-      color: var(--gold); font-style: italic;
+      color: var(--gold);
       animation: fadeUp .8s .12s ease both;
     }
     .hero-title em { font-style: italic; color: var(--gold); }
@@ -365,14 +365,14 @@
       nav { padding: 1rem 5%; }
       .nav-links {
         display: none; flex-direction: column;
-        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-        background: var(--ink); align-items: center; justify-content: center;
-        gap: 2.5rem; z-index: 200;
+        position: fixed; top: 3.5rem; left: 0; right: 0;
+        background: var(--ink); align-items: flex-start;
+        gap: 0.3rem; z-index: 200; padding: 1rem 2rem; width: 100%;
       }
       .nav-links.open { display: flex; }
-      .nav-links a { font-size: 1.2rem !important; color: var(--cream) !important; }
+      .nav-links a { font-size: 0.8rem !important; color: var(--cream) !important; display: block; padding: 0.4rem 0; text-transform: uppercase; }
       .nav-links a:hover { color: var(--gold) !important; }
-      .nav-cta { background: var(--gold) !important; color: var(--white) !important; padding: .8rem 2rem !important; }
+      .nav-cta { background: var(--gold) !important; color: var(--white) !important; padding: 0.5rem 1.2rem !important; margin-top: 0.3rem; }
       .hamburger {
         display: flex; flex-direction: column; gap: 5px;
         cursor: pointer; z-index: 300; background: none; border: none; padding: .3rem;
@@ -399,7 +399,7 @@
       'Especialidades': 'Specialties',
       'Sobre mí': 'About',
       'Proceso': 'Process',
-      'Solicitar presupuesto': 'Get a Quote',
+      'Solicitar presupuesto': 'Get a <em>Quote</em>',
       'Lo que hago': 'What I Do',
       'Servicios profesionales': 'Professional <em>Services</em>',
       'Mis áreas': 'My Areas',
@@ -464,6 +464,7 @@
       'Inglés ↔ Español': 'English ↔ Spanish',
       'Buenos Aires, Argentina · Servicios remotos a nivel global': 'Buenos Aires, Argentina · Remote services worldwide',
       'Colegio de Traductores Públicos de la Ciudad de Buenos Aires': 'College of Public Translators of the City of Buenos Aires',
+      'Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA)': 'Sworn Translators\' Association of the City of Buenos Aires (CTPCBA)',
       'Tu nombre': 'Your name',
       'Tu email': 'Your email',
       'Asunto / Tipo de documento': 'Subject / Document type',
@@ -471,7 +472,7 @@
       'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.': 'Public, technical-scientific and literary translations from English ↔ Spanish backed by over 20 years of experience and official certification in Argentina.',
       'Palabras que cruzan fronteras sin perder sentido': 'Words that cross <em>borders</em> without losing meaning',
       'profesionales': 'Professional',
-      'Traducciones Públicas, Técnico-Científicas y Literarias de inglés <> español': 'English <> Spanish Sworn,<br>Technical-Scientific and <em>Literary</em><br>Translations',
+      'Traducciones Públicas, Técnico-Científicas y Literarias de inglés <> español': 'English <> Spanish Sworn, Technical-Scientific and Literary Translations',
       'En un mundo globalizado, la comunicación es la CLAVE del ÉXITO': 'In an increasingly globalized world, communication is the KEY to SUCCESS',
       'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en la Argentina.': 'English <> Spanish Sworn, technical-scientific and literary translations backed by over 20 years of experience and official certification in Argentina.',
       'Traducciones con firma ológrafa y digital legalizadas por el Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA).': 'Translations with holographic (handwritten) and digital signatures, certified by the Sworn Translators\' Association of the City of Buenos Aires (CTPCBA).',
@@ -648,10 +649,10 @@
   }
 
   // Add English translations for new content
-  translations.en['Servicios de traducción'] = 'Translation <em>Services</em>';
-  translations.en['Áreas de especialización'] = 'Specialization <em>Areas</em>';
-  translations.en['Calidad, eficiencia y responsabilidad que marcan la diferencia'] = 'Quality, efficiency and responsibility that make a <em>difference</em>';
-  translations.en['Lo ayudamos a superar las barreras idiomáticas'] = 'We help you overcome <em>language barriers</em>';
+  translations.en['Servicios de traducción'] = 'Translation Services';
+  translations.en['Áreas de especialización'] = 'Specialization Areas';
+  translations.en['Calidad, eficiencia y responsabilidad que marcan la diferencia'] = 'Quality, efficiency and responsibility that make a difference';
+  translations.en['Lo ayudamos a superar las barreras idiomáticas'] = 'We help you overcome language barriers';
   translations.en['En un mundo globalizado, la COMUNICACIÓN es la clave del ÉXITO'] = 'In an increasingly globalized world, COMMUNICATION is the key to SUCCESS';
   translations.en['Solicitar presupuesto'] = 'Get a <em>Quote</em>';
 
@@ -860,7 +861,7 @@
         <div class="contact-detail-icon">🏛️</div>
         <div>
           <h4 data-i18n="Certificación">Certificación</h4>
-          <p data-i18n="Colegio de Traductores Públicos de la Ciudad de Buenos Aires">Colegio de Traductores Públicos de la Ciudad de Buenos Aires</p>
+          <p data-i18n="Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA)">Colegio de Traductores Públicos de la Ciudad de Buenos Aires (CTPCBA)</p>
         </div>
       </div>
     </div>
