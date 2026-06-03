@@ -705,22 +705,18 @@
   translations.en['Solicitar <em>presupuesto</em>'] = 'Get a <em>Quote</em>';
   translations.en['Solicitar presupuesto'] = 'Get a Quote';
 
-  // Load saved language
+  // Load saved language (default: Spanish)
   const savedLang = localStorage.getItem('language') || 'es';
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       const selector = document.getElementById('langSelector');
       if (selector) selector.value = savedLang;
-      if (savedLang === 'en') {
-        changeLanguage('en');
-      }
+      changeLanguage(savedLang);
     });
   } else {
     const selector = document.getElementById('langSelector');
     if (selector) selector.value = savedLang;
-    if (savedLang === 'en') {
-      changeLanguage('en');
-    }
+    changeLanguage(savedLang);
   }
 </script>
 
