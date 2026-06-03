@@ -589,7 +589,8 @@
       'Public, technical-scientific and literary translations from English ↔ Spanish backed by over 20 years of experience and official certification in Argentina.': 'Traducciones públicas, técnico-científicas y literarias de inglés ↔ español respaldadas por más de 20 años de experiencia y certificación oficial en Argentina.',
       'Words that cross borders without losing meaning': 'Palabras que cruzan fronteras sin perder sentido',
       'Professional': 'profesionales',
-      'Get a <em>Quote</em>': 'Solicitar <em>presupuesto</em>'
+      'Get a <em>Quote</em>': 'Solicitar <em>presupuesto</em>',
+      'En un mundo globalizado, la COMUNICACIÓN es la clave del ÉXITO': '<span style="color: var(--ink);">En un mundo globalizado, la </span><strong style="color: var(--gold);">COMUNICACIÓN</strong><span style="color: var(--ink);"> es la clave del </span><strong style="color: var(--gold);">ÉXITO</strong>'
     }
   };
 
@@ -602,6 +603,8 @@
 
       if (lang === 'en' && translations.en[key]) {
         el.innerHTML = translations.en[key];
+      } else if (lang === 'es' && translations.es[key]) {
+        el.innerHTML = translations.es[key];
       } else if (lang === 'es') {
         el.innerHTML = key;
       }
