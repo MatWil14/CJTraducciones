@@ -16,7 +16,12 @@
       "Bash(grep -v '^$')",
       "mcp__ide__getDiagnostics",
       "Bash(gh pr *)",
-      "Bash(python *)"
+      "Bash(python *)",
+      "Bash(curl -s http://localhost:8000)",
+      "WebFetch(domain:the-wood-spirit.vercel.app)",
+      "mcp__magic__logo_search",
+      "Bash(pkill -f \"python -m http.server\")",
+      "WebFetch(domain:infoaval.com.ar)"
     ]
   }
 }
