@@ -5,6 +5,7 @@
     { "source": "/es/index.php", "destination": "/", "permanent": true },
     { "source": "/en", "destination": "/", "permanent": true },
     { "source": "/en/", "destination": "/", "permanent": true },
-    { "source": "/en/index.php", "destination": "/", "permanent": true }
+    { "source": "/en/index.php", "destination": "/", "permanent": true },
+    { "source": "/traductorapublica-tecnico-cientifica-literaria/quienessomos.asp", "destination": "/", "permanent": true }
   ]
 }
